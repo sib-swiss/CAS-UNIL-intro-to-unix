@@ -17,6 +17,7 @@ operating system, and the **[Bash shell](https://www.gnu.org/software/bash)**.
 * [Course slides](slides_intro_to_UNIX.pdf)
 * [Exercises instructions](exercise_instructions.md)
 * [Exercises material](https://github.com/sib-swiss/CAS-UNIL-intro-to-unix/raw/main/exercises.zip)
+* [Exam instructions](exam_instructions.md)
 
 ### Environment setup
 
