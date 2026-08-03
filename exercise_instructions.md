@@ -1,43 +1,38 @@
-# Exercises - Introduction to Linux / UNIX
+# Exercises - Introduction to Linux / UNIX and the Bash shell
 
 <br>
 
 ## Before you start
 
-* :pencil:
-  **Exercise material setup:** download the
-  [exercises.zip](https://github.com/sib-swiss/unix-first-steps-training/raw/main/exercises.zip)
+* **📚 Exercise material setup:** download the
+  [exercises.zip](https://github.com/sib-swiss/CAS-UNIL-intro-to-unix/raw/main/exercises.zip)
   archive file to your local computer and unzip it. This will unpack a
   directory named `exercises`, with all the data needed for the course
   exercises.
 
-* :pencil2:
-  **Additional Tasks:** at the end of each exercise, you will find a section
+* **📝 Additional Tasks:** at the end of each exercise, you will find a section
   named **Additional Tasks**. These sections contain tasks to complete
   **if you have the time and after having completed the main exercise**.
   Additional tasks sections will not be corrected in class, but their solution
   is given in this document.
 
-* :white_check_mark:
-  **Exercise solutions:** all exercises and additional tasks section have
+* **✅ Exercise solutions:** all exercises and additional tasks section have
   their solution embedded in this document. Solutions are hidden by default,
   but you can reveal them by clicking on them. Here is an example:
 
   <details><summary><b>Exercise solution (click to reveal)</b></summary>
-  :sparkles: This reveals the answer :sparkles:
+  ✨ This reveals the answer ✨
   </details>
 
   We encourage you to **not look at the solutions too quickly**, and try to
   solve the exercises without them. Remember that you can always ask the
   course teachers for help.
 
-* :fire:
-  **Tip:** if you are viewing these instructions on the GitHub web-interface,
+* **🔥 Tip:** if you are viewing these instructions on the GitHub web-interface,
   you can display a table of content (outline) of this page by clicking on the
   small icon that looks like a bulleted list near the top-right of this page.
 
-* :shell:
-  The exercises instructions are designed to work with the **bash** shell,
+* 🐚 The exercises instructions are designed to work with the **bash** shell,
   but should also work in other shells, such as the **zsh** shell that is
   found by default on MacOS. To find out what shell you are currently using,
   you can run the following command in your terminal:
@@ -46,17 +41,13 @@
    echo $0
    ```
 
-  On MacOS, if you are in `zsh` and would like to **switch to `bash`**, you can
-  simply type `bash`.
-
 <br>
 <br>
 <br>
 
 ## Exercise 1 - Navigating the filesystem in command line [~20 min]
 
-:triangular_flag_on_post:
-**Objective:** get familiar with navigating the directory tree and listing
+**🚩 Objective:** get familiar with navigating the directory tree and listing
 the content of directories.
 
 <br>
@@ -70,7 +61,7 @@ Open a new terminal (shell) and perform the following tasks:
    from the `.zip` archive file), then enter the `exercise_1/` subdirectory.
    To make sure you are at the right location, use the `pwd` command again.
 
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
      ```sh
      # The actual location of the "exercises" directory depends on where you
@@ -81,7 +72,7 @@ Open a new terminal (shell) and perform the following tasks:
      pwd
      ```
 
-    :sparkles: changing directory to `exercise_1` can of course also be done
+    **✨ Note:** changing directory to `exercise_1` can of course also be done
     in a single command:
 
      ```sh
@@ -94,20 +85,17 @@ Open a new terminal (shell) and perform the following tasks:
 
 3. **List the content** of the `exercise_1/` directory with `ls`, `ls -l`,
    `ls -lh`, and `ls -lha`.
-   * :question:
-     **Question:** what do the `-l`, `-h` and `-a` options do?
-   * :dart:
-     **Hint:** you can use `man ls` to display the help for the `ls` command.
-     To exit the help, simply type `q` on your keyboard.
-   * :sparkles:
-     **Notes:**
+   * **❓ Question:** what do the `-l`, `-h` and `-a` options do?
+   * **🎯 Hint:** you can use `man ls` to display the help for the `ls`
+     command. To exit the help, simply type `q` on your keyboard.
+   * **✨ Notes:**
      * One-letter options can be grouped together, so `ls -lha` is the
        same as `ls -l -h -a`.
      * Some options have both a "short" and a "long" form. E.g. `ls -lah`
        is the short form for `ls -l --all --human-readable`.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     ls       # Prints the names of files and directories.
@@ -132,12 +120,11 @@ Open a new terminal (shell) and perform the following tasks:
 4. **List the content of the directory in chronological order** (newest file
    first) and in reverse chronological order (oldest file first).
 
-   * :dart:
-     **Hint:** the option to sort by time is `-t`. To reverse sorting use
+   * **🎯 Hint:** the option to sort by time is `-t`. To reverse sorting use
      `-r`/`--reverse`.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     ls -lht    # The "-t" option sorts by time, newest file first.
@@ -196,11 +183,10 @@ Open a new terminal (shell) and perform the following tasks:
 6. In the current working directory, **run the command `cd .`**. You should
    observe that this command has **no net effect** (i.e. it did not change
    directory).
-   * :question:
-     **Question:** what is the meaning of **`.`** in the command **`cd .`** ?
+   * **❓ Question:** what is the meaning of `.` in the command `cd .` ?
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     **`.`** is the **relative path of the current directory**. Therefore,
     running `cd .` has no effect as it simply changes to the same directory
@@ -216,11 +202,10 @@ Open a new terminal (shell) and perform the following tasks:
 7. **Change your working directory** to the `exercise_2/` directory using its
    **relative path**. `exercise_2/` is located in the same parent directory
    as `exercise_1`, your current working directory.
-    * :dart:
-      **Hint:** the relative path of the parent directory is **`..`**
+    * **🎯 Hint:** the relative path of the parent directory is **`..`**
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
      ```sh
      cd ../exercise_2/
@@ -250,7 +235,7 @@ Open a new terminal (shell) and perform the following tasks:
 
 8. **Try the `cd ~` and `cd -` shortcuts**. What do they do?
 
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     * **`~`** is a shortcut for the "home directory", and therefore `cd ~` is a
       shortcut to change directory to your home directory.
@@ -263,8 +248,7 @@ Open a new terminal (shell) and perform the following tasks:
 9. **Create an alias named `ll`** that runs the following command:
    `ls -lh --group-directories-first --color=auto`.
 
-   :sparkles:
-   **Notes:**
+   **✨ Notes:**
    * On some Linux system, an `ll` alias may already exist.
    * To list your currently defined aliases, you can type `alias` to list them
      all, or `alias <name of alias>` to list a specific one (e.g. `alias ll`).
@@ -276,7 +260,7 @@ Open a new terminal (shell) and perform the following tasks:
      (e.g. `.bashrc`) where it is defined.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
      ```sh
      # Create a new "ll" alias:
@@ -303,7 +287,7 @@ Open a new terminal (shell) and perform the following tasks:
     the command **`du -sh <directory>`** can be used. Try in on the directories
     found in `exercise_1`.
 
-    <details><summary><b>:white_check_mark: Solution</b></summary>
+    <details><summary><b>✅ Solution</b></summary>
 
      ```sh
      du -sh a_directory  # 20K  (20 kilobytes)
@@ -327,9 +311,8 @@ Open a new terminal (shell) and perform the following tasks:
       readable format, using the `k`, `M`, `G`, ... unit abbreviations for
       `kB` (kilobyte), `MB` (megabyte), `GB`, (gigabyte) etc.
 
-    :sparkles:
-    **Note:** in everyday language, the term **kilobyte** (abbreviated `kB`) is
-    used for talking interchangeably about either 1000 bytes or 1024 bytes,
+    **✨ Note:** in everyday language, the term **kilobyte** (abbreviated `kB`)
+    is used for talking interchangeably about either 1000 bytes or 1024 bytes,
     because they represent almost the same quantity of bytes.  
     If we really wanted to be precise, the proper name for a unit of 1024 bytes
     is a *kibibyte* `KiB`, while a *kilobyte* designates 1000 bytes. Similarly,
@@ -342,12 +325,10 @@ Open a new terminal (shell) and perform the following tasks:
 
 ## Exercise 2 - Filename expansion with wildcard characters [~20 min]
 
-:triangular_flag_on_post:
-**Objective:** learn to use **filename expansion (globbing)** using
+**🚩 Objective:** learn to use **filename expansion (globbing)** using
 **wildcard characters** to match existing file names.
 
-:sparkles:
-**Notes:**
+**✨ Notes:**
 
 * The correct technical term for the expansion of wildcards characters by the
   shell is
@@ -356,9 +337,8 @@ Open a new terminal (shell) and perform the following tasks:
 * Globbing only matches **existing file/directory names**: expansion will not
   happen if there is no matching file/directory. This is why it's official
   name is *filename expansion*.
-* :fire:
-  **Tip:** If you don't want a specific wildcard character to expand, you can
-  **escape it** by prefixing it with **`\`**.  
+* **🔥 Tip:** If you don't want a specific wildcard character to expand, you
+  can **escape it** by prefixing it with **`\`**.  
   E.g. `ls test_\*.md` will try to list a file named exactly `test_*.md`.
 
 <br>
@@ -377,18 +357,16 @@ humans, it would be named `Homo_sapiens`.
 Using `ls` and wildcard characters, perform the following tasks:
 
 1. **List all files starting with the letter `i`** (upper or lower case).  
-   :dart:
-   **Hint:** you should have 1 match.
+   **🎯 Hint:** you should have 1 match.
 
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     cd exercise_2/RedList_mammals/
     ls -l I*   # Returns a single match: Indri_indri (a lemur species).
     ```
 
-    :sparkles:
-    **Notes:**
+    **✨ Notes:**
     * In this exercise, since all file names start with a capital letter,
       `ls -l I*` is sufficient to list all files starting with the letter `i`.
       If there were also files starting with lower case letters, we would need
@@ -403,10 +381,9 @@ Using `ls` and wildcard characters, perform the following tasks:
 
 2. **List the files of [Rhinoceros species](https://en.wikipedia.org/wiki/Rhinoceros#Species)**
    (genus *Rhinoceros*, *Dicerorhinus*, and *Diceros*).  
-   :dart:
-   **Hint:** you should have 3 matches.
+   **🎯 Hint:** you should have 3 matches.
 
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     ls -l Rhinoceros_* Dicerorhinus_* Diceros_*
@@ -417,12 +394,10 @@ Using `ls` and wildcard characters, perform the following tasks:
     # Rhinoceros_sondaicus      (Javan Rhinoceros).
     ```
 
-    :sparkles:
-    **Notes:**
+    **✨ Notes:**
     * Since both the genus `Dicerorhinus` and `Diceros` start with `Dicero`,
       we can match the pattern `Dicero*` to get both genuses at the same time.
-    * :rhinoceros:
-      There exists 2 other Rhino species:
+    * 🦏 There exists 2 other Rhino species:
       * The White Rhino (*Ceratotherium simum*) is
         [listed as "Near Threatened" by the IUCN](https://www.iucnredlist.org/species/4185/45813880).
         This species has two subspecies: the Northern and Southern White Rhino.
@@ -438,10 +413,9 @@ Using `ls` and wildcard characters, perform the following tasks:
 3. **List the files of Gibbon species** from the genus
    *[Nomascus](https://en.wikipedia.org/wiki/Nomascus)* whose species
    name ends with either `r` or `i`.  
-   :dart:
-   **Hint:** you should have 2 matches.
+   **🎯 Hint:** you should have 2 matches.
 
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     ls -l Nomascus_*[ri]
@@ -450,8 +424,7 @@ Using `ls` and wildcard characters, perform the following tasks:
     # Nomascus_siki      (Southern white-cheeked gibbon).
     ```
 
-    :sparkles:
-    **Note:** in this specific case, using `ls -l Nomascus_*[ri]` or
+    **✨ Note:** in this specific case, using `ls -l Nomascus_*[ri]` or
     `ls -l Nomascus*[ri]` gives the same result, but in principle the former is
     safer to use because it will only match genus names corresponding to
     exactly `Nomascus`, while the later could match any genus name starting
@@ -470,10 +443,9 @@ Using `ls` and wildcard characters, perform the following tasks:
    would be a match, because its genus name *Eubalaena* contains the pattern
    `lae` and its species name *glacialis* starts with a `g`.
 
-   :dart:
-   **Hint:** you should have 3 matches.
+   **🎯 Hint:** you should have 3 matches.
 
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     ls -l *l?[a-h]*_g*
@@ -500,8 +472,7 @@ Using `ls` and wildcard characters, perform the following tasks:
    would be a match, because its genus name *Pteralopex* contains the pattern
    `opex` and its species name *pulchra* ends with the pattern `ra`.
 
-   :dart:
-   **Hints:**
+   **🎯 Hints:**
    * This pattern cannot be matched in a single expression using only regular
      file globbing (i.e. filename expansion). You will need to either:
      * Use 2 expressions with regular globbing.
@@ -510,7 +481,7 @@ Using `ls` and wildcard characters, perform the following tasks:
    * You should have 4 matches.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     ls -l *[ao]??x_*[ra] *[ao]??x_*i  # Solution using pure globbing. Requires some duplication.
@@ -523,8 +494,7 @@ Using `ls` and wildcard characters, perform the following tasks:
     # Sorex_sclateri        (Sclater's shrew).
     ```
 
-    :sparkles:
-    **Note:** to avoid duplicating the `*[ao]??x_*` part, we can use either
+    **✨ Note:** to avoid duplicating the `*[ao]??x_*` part, we can use either
     **pattern matching** or **brace expansion**:
     * **[Pattern matching](https://www.gnu.org/software/bash/manual/bash.html#Pattern-Matching)**:
       here **`@(ra|i)`** matches either the pattern `ra` or `i`.
@@ -550,14 +520,12 @@ Using `ls` and wildcard characters, perform the following tasks:
 6. **Try to add quotes (single or double) around a globbing pattern** with
    wildcards, e.g. `ls -l "I*"`.
 
-   * :question:
-     **Question:** what difference do the quote make (if any)?
-   * :question:
-     **Question:** can you think of a use case for using quotes around a
-     pattern with wildcards?
+   * **❓ Question:** what difference do the quote make (if any) ?
+   * **❓Question:** can you think of a use case for using quotes around a
+     pattern with wildcards ?
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     Adding single or double quotes around the search pattern prevents the
     shell from performing file expansion (globbing). Instead, it will try to
@@ -602,9 +570,8 @@ Using `ls` and wildcard characters, perform the following tasks:
 
 ## Exercise 3 - File management: create, copy, move, and delete [~20 min]
 
-:triangular_flag_on_post:
-**Objective:** learn to use the commands to create, move, copy and delete files
-and directories: **`mkdir`**, **`cp`**, **`mv`**, **`rmdir`**, **`rm`**.
+**🚩 Objective:** learn to use the commands to create, move, copy and delete
+files and directories: **`mkdir`**, **`cp`**, **`mv`**, **`rmdir`**, **`rm`**.
 
 <br>
 
@@ -620,13 +587,12 @@ Enter the directory `exercise_3/` and perform the following tasks:
    * In `species_by_common_name/`, create 2 new sub-directories
      named `B`, and `R`.
 
-   :fire:
-   **Tip:** to avoid having to rewrite a command, remember that you can use
+   **🔥 Tip:** to avoid having to rewrite a command, remember that you can use
    the **up arrow** of your keyboard to go back in your terminal history.
    This allows you to re-use a command that you wrote earlier, while making
    changes to it if needed.
 
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     * **Create the directories `species_by_genus` and `species_by_common_name`**.
 
@@ -673,8 +639,7 @@ Enter the directory `exercise_3/` and perform the following tasks:
      mkdir species_by_common_name/{B,R}
      ```
 
-    :sparkles:
-    **Note:** using the **`-p` option of `mkdir`**, it is possible to create
+    **✨ Note:** using the **`-p` option of `mkdir`**, it is possible to create
     multiple levels of directories in a single command. For example, we could
     create all the directories for this exercise in a single command:
 
@@ -682,10 +647,10 @@ Enter the directory `exercise_3/` and perform the following tasks:
       mkdir -p species_by_{genus/{Dendrolagus,Crocidura},common_name/{B,R}}
       ```
 
-    :fire:
-    **Tip:** to preview the output of a brace expansion (or filename expansion),
-    you can run the command prefixed with **`echo`**: this prints the command
-    that would be executed to the terminal without running the command.
+    **🔥 Tip:** to preview the output of a brace expansion (or filename
+    expansion), you can run the command prefixed with **`echo`**: this prints
+    the command that would be executed to the terminal without running the
+    command.
 
       ```sh
       echo mkdir -p species_by_{genus/{Dendrolagus,Crocidura},common_name/{B,R}}
@@ -703,7 +668,7 @@ Enter the directory `exercise_3/` and perform the following tasks:
      directory `species_by_common_name`.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
      ```sh
      # Copy files for the "Dendrolagus" genus.
@@ -719,14 +684,14 @@ Enter the directory `exercise_3/` and perform the following tasks:
    <br>
    </details>
 
-3. **Move and rename** the Red Wold file with the **`mv`** command:
+3. **Move and rename** the Red Wolf file with the **`mv`** command:
    * Enter the `species_by_common_name` directory.
    * In the directory, move the file `Canis_rufus` into subdirectory `R`.
    * Rename the `Canis_rufus` file you just moved into the subdirectory `R` to
      the common name of the species: `Red_wolf`.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     cd species_by_common_name/
@@ -747,7 +712,7 @@ Enter the directory `exercise_3/` and perform the following tasks:
      directly renaming it to the common name of the species: `Black_rhino`.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
      # Note: this assumes the current working directory is "species_by_common_name".
@@ -761,14 +726,13 @@ Enter the directory `exercise_3/` and perform the following tasks:
    * Change directory to the root of the `exercise_3/` directory.
    * Copy the entire directory `species_by_genus/Dendrolagus` - with all its
      content - to the root of `exercise_3`.  
-     :target:
-     **Hint:** to make a **recursive** copy of a directory, the option is
+     **🎯 Hint:** to make a **recursive** copy of a directory, the option is
      `-r`/`--recursive`.
    * Rename the directory to `Tree-kangaroos`.
    * Delete the directory `Tree-kangaroos` and its content **in a safe way**.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     cd ..                                  # Change directory to `exercise_3`.
@@ -786,14 +750,13 @@ Enter the directory `exercise_3/` and perform the following tasks:
     rmdir Tree-kangaroos
     ```
 
-    :kangaroo:
-    **Note:** the faster way to delete the directory and all of its content is
-    to use the command: `rm -rf Tree-kangaroos`.
-    * :warning:
-      This recursively deletes the directory, and therefore one has to be
-      **very careful** to delete the correct directory, as you can otherwise
-      very quickly delete large amounts of data by mistake, which can be
-      problematic as **there is no command to undo file deletion**.
+    > **🦘 Note:** the faster way to delete the directory and all of its
+    > content is to use the command: `rm -rf Tree-kangaroos`.
+    >
+    > **⚠️ Warning:** this recursively deletes the directory, and therefore
+    > one has to be **very careful** to delete the correct directory, as you
+    > can otherwise very quickly delete large amounts of data by mistake,
+    > which can be problematic. **There is no command to undo file deletion**.
 
    <br>
    </details>
@@ -819,9 +782,8 @@ Enter the directory `exercise_3/` and perform the following tasks:
    screen without creating anything on disk). Then adapt the `for` loop so that
    it creates the directories from `A` to `Z`.
 
-   :sparkles:
-   **Note:** in this specific case, a **for loop** is not even necessary, as we
-   can also simply use
+   **✨ Note:** in this specific case, a **for loop** is not even necessary,
+   as we can also simply use
    **[brace expansion](https://www.gnu.org/software/bash/manual/bash.html#Brace-Expansion)**:
    `mkdir {A..Z}`.
 
@@ -845,7 +807,7 @@ Enter the directory `exercise_3/` and perform the following tasks:
 
 <br>
 
-<details><summary><b>:white_check_mark: Additional tasks solution</b></summary>
+<details><summary><b>✅ Additional tasks solution</b></summary>
 <p>
 
 ```sh
@@ -874,8 +836,7 @@ ls -l ./*
 
 ## Exercise 4 - Finding files [~15 min]
 
-:triangular_flag_on_post:
-**Objective:** learn to use the **`find`** command.
+**🚩 Objective:** learn to use the **`find`** command.
 
 <br>
 
@@ -884,13 +845,12 @@ Enter the `exercise_4` directory and perform the following tasks using the
 
 1. **Find all files with a `.png` extension** located anywhere in `exercise_4/`.
    * Make sure to list *only* files, and not directories.  
-   * :dart:
-     **Hints:**
+   * **🎯 Hints:**
      * Use **`-type f`** to restrict the search to files (excludes directories).
      * You should find a total of 6 `.png` files.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
      ```sh
      cd exercise_4/
@@ -917,13 +877,12 @@ Enter the `exercise_4` directory and perform the following tasks using the
 
 2. **Find files with either a `.jpeg` or `.png` extension**.
    * As before, directories should be excluded from the search results.  
-   * :dart:
-     **Hint:**
+   * **🎯 Hint:**
      * Use the **`-or`** operator to combine multiple search conditions.
      * You should find a total of 15 files.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     :warning: Note that **`-type f`** must be repeated for each condition.
 
@@ -933,8 +892,7 @@ Enter the `exercise_4` directory and perform the following tasks using the
      # -> There are 6 ".png" files, located in ./images/img.png/
      ```
   
-    :sparkles:
-    If you are familiar with
+    **✨ Note:** if you are familiar with
     [regular expressions](https://www.regular-expressions.info), you can also
     use them with the `find` command by passing the **`-regex`** option.
     Here we find all `.jpeg` or `.png` files (same as above) using a regexp:
@@ -948,7 +906,7 @@ Enter the `exercise_4` directory and perform the following tasks using the
 
 3. Find all `.jpeg` files **larger than `15 kB`**.
 
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     find . -type f -name "*.jpeg" -size +15k
@@ -979,14 +937,13 @@ Your output for all `.jpeg` files larger than `15 kB` should look like this:
 -rw-rw-r-- 1 bob bob 16K Jan  8 11:36 ./images/img.jpeg/linux_suse_logo.jpeg
 ```
 
-<details><summary><b>:white_check_mark: Solution</b></summary>
+<details><summary><b>✅ Solution</b></summary>
 
 ```sh
 find . -type f -name *.jpeg -size +15k -exec ls -lh "{}" +
 ```
 
-:sparkles:
-**Note:** the following syntax is also possible:
+**✨ Note:** the following syntax is also possible.
 
 ```sh
 find . -type f -name *.jpeg -size +15k -exec ls -lh "{}" \;
@@ -1026,10 +983,9 @@ call.
 
 ## Exercise 5 - Display file content [~10 min]
 
-:triangular_flag_on_post:
-**Objective:** get familiar with shell commands that display text file content:
-**`head`**, **`tail`**, **`cat`** and **`less`**. Also includes a basic usage
-of **`tar`**.
+**🚩 Objective:** get familiar with shell commands that display text file
+content: **`head`**, **`tail`**, **`cat`** and **`less`**. Also includes a
+basic usage of **`tar`**.
 
 <br>
 
@@ -1045,7 +1001,7 @@ Your first task in this exercise is to:
   and untar the archive file).
 
   <br>
-  <details><summary><b>:white_check_mark: Solution</b></summary>
+  <details><summary><b>✅ Solution</b></summary>
 
      ```sh
      # List the content of the TAR archive file.
@@ -1069,7 +1025,7 @@ tasks on the `protein_sequences.fasta` file:
    * Display the last 5 lines of the file.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     cd exercise_5/protein_sequences.fasta 
@@ -1077,8 +1033,7 @@ tasks on the `protein_sequences.fasta` file:
     tail -5 protein_sequences.fasta
     ```
 
-   :fire:
-   **Tips:**
+   **🔥 Tips:**
    * To display the entire file **except for the last `X` lines** we can use
      **`head -n-X`** (replace `X` by the number of lines you want to skip
      at the end of the file).
@@ -1093,7 +1048,7 @@ tasks on the `protein_sequences.fasta` file:
    * Count only the number of words in the file.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     wc -l protein_sequences.fasta   # 19222 lines.
@@ -1104,12 +1059,11 @@ tasks on the `protein_sequences.fasta` file:
    </details>
 
 3. **Display the content** of the file using the **`cat`** command.
-   * :question:
-     **Question:** why is `cat` not the most adapted program here ? What could
+   * **❓ Question:** why is `cat` not the most adapted program here ? What could
      we use instead ?
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     cat protein_sequences.fasta
@@ -1135,7 +1089,7 @@ tasks on the `protein_sequences.fasta` file:
    * Close the file (exit `less`) with pressing the **`q`** key.
 
    <br>
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
     ```sh
     less protein_sequences.fasta
@@ -1178,8 +1132,7 @@ tasks on the `protein_sequences.fasta` file:
    * If you display the content of `file_3` with `cat`, you will see that it
      contains 10 lines: the content of both `file_1` and `file_2`.
 
-   * :sparkles:
-     **Bonus:** we could also create `file_3` of the example above without
+   * **🌟 Bonus:** we could also create `file_3` of the example above without
      creating any intermediate file. This is done using a method called
      **[process substitution](https://www.gnu.org/software/bash/manual/bash.html#Process-Substitution)**
      and allows to treat the output of a command as an input file. The syntax
@@ -1189,8 +1142,7 @@ tasks on the `protein_sequences.fasta` file:
       cat <( head -n5 protein_sequences.fasta ) <( tail -n5 protein_sequences.fasta )
       ```
 
-   * :sparkles:
-     **Note:** to concatenate multiple files by columns, use the **`paste`**
+   * **✨ Note:** to concatenate multiple files by columns, use the **`paste`**
      command.
 
 6. **Display *only* the line 100 of `protein_sequences.fasta`** by using a
@@ -1199,7 +1151,7 @@ tasks on the `protein_sequences.fasta` file:
    For this you will need to use the the **`|` (pipe) operator**, that allows
    to redirect the output of one command into another command.
 
-   <details><summary><b>:white_check_mark: Solution</b></summary>
+   <details><summary><b>✅ Solution</b></summary>
 
    **`head`** and **`tail`** can be combined to display any section of a file.
    Here is how we print the line 100 of the file:
@@ -1217,9 +1169,8 @@ tasks on the `protein_sequences.fasta` file:
 
 ## Exercise 6 - Convert, sort, compare and merge tabulated data [~30 min]
 
-:triangular_flag_on_post:
-**Objective:** get familiar with some of the basic Linux/UNIX core utilities -
-**`cut`**, **`sort`**, **`tr`**, **`paste`**, **`diff`**.
+**🚩 Objective:** get familiar with some of the basic Linux/UNIX core
+utilities - **`cut`**, **`sort`**, **`tr`**, **`paste`**, **`diff`**.
 
 ### Exercise context
 
@@ -1291,7 +1242,7 @@ Enter the directory `exercise_6/micro-array/data` and have a look at the
 3 input files using `less` or `head`, to get familiar with their structure
 and content.
 
-<details><summary><b>:white_check_mark: Step 1 solution</b></summary>
+<details><summary><b>✅ Step 1 solution</b></summary>
 
 ```sh
 cd exercise_6/micro-array/data/
@@ -1312,15 +1263,14 @@ character. We would like to change this separator to a Tab **`\t`**.
 * Convert the delimiters from `;` to `\t` (tab) using the command **`tr`**.
 * Save the converted content into a new file with a `.tsv` extension. E.g. the
   converted version of `array_data-1.csv` should be named `array_data-1.tsv`.
-* :dart:
-  **Hints**:
+* **🎯 Hints**:
   * To convert (translate) one character to another in a file, the `tr`
     command looks like: `tr "CHARACTER TO REPLACE" "NEW CHARACTER"`.
   * `tr` is a command that only takes input from the standard input (*stdin*),
     i.e. it does not accept a file name as argument. Therefore, you need to
     redirect the content of a file to standard input with `< FILE_NAME`.
 
-<details><summary><b>:white_check_mark: Step 2 solution</b></summary>
+<details><summary><b>✅ Step 2 solution</b></summary>
 
 ```sh
 tr ";" "\t" < array_data-1.csv > array_data-1.tsv
@@ -1353,14 +1303,13 @@ files need to be sorted by their 1st column (`ProbeID`).
   **`sort`** command.
 * Make sure that the **header line** of the file remains at the top after the
   sorting operation.  
-  * :dart:
-    **Hint:** the header line is the only line that starts with a letter. We
+  * **🎯 Hint:** the header line is the only line that starts with a letter. We
     can therefore take advantage of *numerical sorting* that sorts letters
     before numbers. You can have a look at `man sort` (the help for the `sort`
     command) to find the right option.
 * Save the sorted output to files named `array_data-sorted-*.tsv`.
 
-<details><summary><b>:white_check_mark: Step 3 solution</b></summary>
+<details><summary><b>✅ Step 3 solution</b></summary>
 
 ```sh
 sort -n array_data-1.tsv > array_data-sorted-1.tsv
@@ -1397,7 +1346,7 @@ Proceed as follows:
   these files. Their only purpose was to allow us to check that all files
   have their lines sorted in the same order.
 
-<details><summary><b>:white_check_mark: Step 4 solution</b></summary>
+<details><summary><b>✅ Step 4 solution</b></summary>
 
 ```sh
 # Extract the first column of each file into a temporary file.
@@ -1414,8 +1363,7 @@ diff -s tmp-1.tsv tmp-3.tsv
 rm tmp-?.tsv
 ```
 
-:sparkles:
-**Bonus:** if we want to avoid creating temporary files, we can use a
+**🌟 Bonus:** if we want to avoid creating temporary files, we can use a
 functionality of the shell called
 **[process substitution](https://www.gnu.org/software/bash/manual/bash.html#Process-Substitution)**,
 where the output of a command is treated as an input file.
@@ -1451,18 +1399,17 @@ ProbeID     Sample1   Sample2   Sample3
 ...
 ```
 
-<details><summary><b>:white_check_mark: Step 5 solution</b></summary>
+<details><summary><b>✅ Step 5 solution</b></summary>
 
 ```sh
 paste array_data-sorted-*.tsv | cut -f 1,2,4,6 > final.tsv
 head final.tsv
 ```
 
-:sparkles:
-**Note:** to learn how to do the entire processing we did in this exercise
-**in a single command**, look at the Additional Tasks 6 section below. It
-also shows how the processing can be done using the `join` command, but it's
-actually more complicated in this case.
+> **✨ Note:** to learn how to do the entire processing we did in this exercise
+> **in a single command**, look at the Additional Tasks 6 section below. It
+> also shows how the processing can be done using the `join` command, but it's
+> actually more complicated in this case.
 
 <br>
 </details>
@@ -1482,17 +1429,19 @@ For this you will need to use the following shell functionalities:
   syntax `<( command )`, to treat the output of a command (or of a series of
   commands) as a virtual file from which data can be read.
 
-:dart:
-**Hint:** this task is a bit more complicated, so to get you started, here is
-an example to give you some inspiration. You can run the command bellow in
+**🎯 Hint:** this task is a bit more complicated, so to get you started, here
+is an example to give you some inspiration. You can run the command bellow in
 your shell:
 
 ```sh
 # Sort and merge the 2nd column (gene expression) of 2 of our input files:
-paste <(sort -n array_data-1.csv | cut -f2 --delim=";") <(sort -n array_data-2.csv | cut -f2 --delim=";") | head
+paste <(sort -n array_data-1.csv | \
+  cut -f2 --delim=";") <(sort -n array_data-2.csv | \
+  cut -f2 --delim=";") | \
+  head
 ```
 
-<details><summary><b>:dart: Additional Hint</b></summary>
+<details><summary><b>🎯 Additional Hint</b></summary>
 
 Here is scaffold of the solution with the **`<()`** and **`|`** placed at the
 correct locations. What is left to do is to replace the textual descriptions
@@ -1506,7 +1455,7 @@ paste <( "sorted content of array_data-1.csv" | convert ; to \t" ) \
 
 </details>
 
-<details><summary><b>:white_check_mark: Solution</b></summary>
+<details><summary><b>✅ Solution</b></summary>
 
 Here is how we could do the whole processing of this exercise in a single
 command without creating any intermediate files.
@@ -1522,12 +1471,12 @@ diff -s final*.tsv       # Same as above, using filename expansion.
 diff -s final{,_2}.tsv   # Same as above, using brace expansion.
 ```
 
-:pushpin:
-An alternative is to use the **`join`** command. Unfortunately, the `join`
-command only allows to join 2 files at a time, so in this case the solution
-ends-up being more complicated (`join` would however be much better in cases
-where we want to join files that have missing rows - i.e. not all files have
-all the rows):
+> **🌟 Bonus:**
+> An alternative is to use the **`join`** command. Unfortunately, the `join`
+> command only allows to join 2 files at a time, so in this case the solution
+> ends-up being more complicated (`join` would however be much better in cases
+> where we want to join files that have missing rows - i.e. not all files have
+> all the rows):
 
 ```sh
 join --check-order -o 0 1.2 1.3 2.2 -1 1 -2 1 -t ";" \
@@ -1549,8 +1498,7 @@ diff -s final{,_3}.tsv
 
 ## Exercise 7 - Introduction to `grep` [~30 min]
 
-:triangular_flag_on_post:
-**Objective:** learn the basic usage of **`grep`** and practice piping the
+**🚩 Objective:** learn the basic usage of **`grep`** and practice piping the
 output of one command to the input of the next command.
 
 In this exercise, we will work with a copy of the file
@@ -1585,9 +1533,8 @@ Enter the directory `exercise_7` and
 **make a copy of the file `exercise_5/protein_sequences.fasta`**
 in your current working directory. Name the copy of the file `sequences.fasta`.
 
-:sparkles:
-**Note for Linux/Mac users:** if you are using Linux/Mac, you may also create
-a **symlink** instead of copying the file. The command is the following:
+**✨ Note for Linux/Mac users:** if you are using Linux/Mac, you may also
+create a **symlink** instead of copying the file. The command is the following:
 
 * `ln -s ../exercise_5/protein_sequences.fasta sequences.fasta`
 * A symlink creates a pointer to a file, without making an actual copy of it.
@@ -1598,10 +1545,10 @@ Have a look at the `sequences.fasta` file - e.g. using the `less` command -
 then **answer the following questions using the `grep` command**:
 
 * How many sequences are there in the file?  
-  :dart: **Hint:** count the number of header lines in the file.
+  **🎯 Hint:** count the number of header lines in the file.
 * How many entries are from `Staphylococcus`?
 * Display header lines that are *not* from `Staphylococcus`?  
-  :dart: **Hint:** you will need to pipe together 2 `grep` commands using the
+  **🎯 Hint:** you will need to pipe together 2 `grep` commands using the
   **`|` (pipe)  operator**.
 
 Here is a reminder of some of the `grep` options:
@@ -1614,7 +1561,7 @@ Here is a reminder of some of the `grep` options:
 
 <br>
 
-<details><summary><b>:white_check_mark: Solution Part A</b></summary>
+<details><summary><b>✅ Solution Part A</b></summary>
 
 ```sh
 cd exercise_7/
@@ -1653,8 +1600,7 @@ Here is a suggested way to perform this task:
    instance of each genus name.
 4. Sort the genus by frequency and keep only the 10 most frequent.
 
-:dart:
-**Hints:**
+**🎯 Hints:**
 
 * The steps above are best done as part of a pipeline: use the
   **`|` (pipe)  operator** to pipe the output of one command into the next.
@@ -1662,7 +1608,7 @@ Here is a suggested way to perform this task:
   pipeline with **`| head`** so that you avoid printing the whole file each
   time.
 
-<details><summary><b>:dart: Additional Hints</b></summary>
+<details><summary><b>🎯 Additional Hints</b></summary>
 
 Here are some commands and their options that are useful for this exercise:
 
@@ -1678,24 +1624,26 @@ Here are some commands and their options that are useful for this exercise:
 
 <br>
 
-<details><summary><b>:white_check_mark: Solution Part B</b></summary>
+<details><summary><b>✅ Solution Part B</b></summary>
 <p>
 
 There are multiple ways to perform this task, here are a few possibilities.
 
-* :sparkles:
-  **Note:** some pipelines below make use of the `grep` option **`-o`**, which
-  instructs `grep` to only output the actual matching pattern instead of the
-  entire line on which the match is found.
+* **✨ Note:** some pipelines below make use of the `grep` option **`-o`**,
+  which instructs `grep` to only output the actual matching pattern instead of
+  the entire line on which the match is found.
 
 ```sh
-grep "^>" sequences.fasta | cut -f2 --delim="=" | cut -f1 --delim=" " | sort | uniq -c | sort -nr | head
+grep "^>" sequences.fasta | cut -f2 --delim="=" | cut -f1 --delim=" " | \
+  sort | uniq -c | sort -nr | head
 
-grep -o "OS=[a-zA-Z]*" sequences.fasta | cut -f2 --delim="=" | sort | uniq -c | sort -nr | head
+grep -o "OS=[a-zA-Z]*" sequences.fasta | cut -f2 --delim="=" | sort | \
+  uniq -c | sort -nr | head
 
 # Same as above, but using the "[[:alpha::]]" syntax to indicate we only want
 # to match alphabetic letters and not e.g. spaces (or numbers).
-grep -o "OS=[[:alpha:]]*" sequences.fasta | cut -f2 --delim="=" | sort | uniq -c | sort -nr | head
+grep -o "OS=[[:alpha:]]*" sequences.fasta | cut -f2 --delim="=" | sort | \
+  uniq -c | sort -nr | head
 
 # Output of the pipe: the 10 most frequent genus and their frequency in the file.
     168 Arabidopsis
@@ -1722,10 +1670,9 @@ Here is another solution that makes use of a more complicated
 grep -oP "(?<=OS=)[a-zA-Z]+ " sequences.fasta | sort | uniq -c | sort -nr | head
 ```
 
-:see_no_evil:
-**[Regular expressions](https://en.wikipedia.org/wiki/Regular_expression)** are
-a powerful tool to do sophisticated pattern matching. However they are beyond
-the scope of this course.
+**🙈 [Regular expressions](https://en.wikipedia.org/wiki/Regular_expression)**
+are a powerful tool to do sophisticated pattern matching. However they are
+beyond the scope of this course.
 
 </details>
 
@@ -1743,8 +1690,7 @@ directory.
 So basically, instead of only doing it for 2 genus manually as we did in
 exercise 3, we want to have it done automatically for all genuses.
 
-:dart:
-**Hints:** this task is more difficult and uses a few concepts that were not
+**🎯 Hints:** this task is more difficult and uses a few concepts that were not
 presented in the course, such as:
 
 * **`for` loops** to repeat a number of instructions multiple times while
@@ -1786,7 +1732,7 @@ What you have left to do in the code above is to:
 
 <br>
 
-<details><summary><b>:white_check_mark: Solution</b></summary>
+<details><summary><b>✅ Solution</b></summary>
 
 ```sh
 # Enter the "exercise_7" directory and create a new "species_by_genus"
