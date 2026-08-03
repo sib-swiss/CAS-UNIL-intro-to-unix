@@ -1,6 +1,6 @@
 # Exam instructions - Introduction to Linux / UNIX
 
-## Exam material :crystal_ball:
+## Exam material 🔮
 
 All the material needed for the exam is found in the `exam.zip`
 archive file hosted in this Git repository.
@@ -18,6 +18,6 @@ archive file hosted in this Git repository.
 
 <br>
 
-## Submitting your answer :pencil:
+## Submitting your answer 📝
 
 Answers should be submitted via the course **Moodle platform**.
