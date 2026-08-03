@@ -1282,6 +1282,21 @@ head array_data-*
 less array_data-1.csv       # Reminder: to exit `less`, press "q".
 ```
 
+> **🔥 Tip:** to display the content of the file in a "nicer", column-aligned
+> format, the **`column`** command can be used:
+>
+> ```sh
+> column -s';' -t array_data-1.csv | less -#2 -N -S
+> ```
+>
+> * **`column -t -s';'`**: aligns the values of the file in columns, using `;`
+>   as the input field separator.
+> * **`less -N`**: displays line numbers.
+> * **`less -S`**: does not wrap long lines. Lines that are too long for the
+>   screen can instead be scrolled horizontally with the left/right arrows.
+> * **`less -#2`**: scrolls 2 characters at a time when using the left/right
+>   arrows (the default is half a screen width).
+
 <br>
 </details>
 
