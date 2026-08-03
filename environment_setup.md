@@ -1,4 +1,4 @@
-# Introduction to Linux / UNIX and the Bash shell: setting-up your environment
+# Introduction to Linux / UNIX and the Bash shell: setting up your environment
 
 Please complete the setup instructions given in this document
 **before the start of the course**.
@@ -14,7 +14,7 @@ using the `zsh` shell.
 
 To start a shell session, open the "Terminal" application.
 
-> **✨ Note**: macOS also comes with a version of `bash` pre-installed, but
+> **✨ Note:** macOS also comes with a version of `bash` pre-installed, but
 > it is a rather old one (`3.2`, kept at that version for licensing reasons).
 > We therefore do not recommend using it for this course.
 >
@@ -23,6 +23,7 @@ To start a shell session, open the "Terminal" application.
 > [Homebrew package manager](https://brew.sh).
 
 <br>
+<br>
 
 ## Windows 🪟
 
@@ -30,9 +31,11 @@ Windows does not natively come with a `bash` shell, but it can be installed
 via different means. We suggest two options, in order of ease of installation
 (easiest first).
 
-> **✨ Note**: Git Bash (option 1) is sufficient for this course. Choose WSL
+> **✨ Note:** Git Bash (option 1) is sufficient for this course. Choose WSL
 > (option 2) if you want a genuine Linux environment. Installing WSL requires
-> Administrator privileges.
+> admin privileges.
+
+<br>
 
 ### Option 1: Git Bash
 
@@ -41,6 +44,8 @@ Install [Git for Windows](https://gitforwindows.org), which comes with a
 
 To start a shell session, open the "Git Bash" application from the Windows
 Start menu.
+
+<br>
 
 ### Option 2: WSL - Windows Subsystem for Linux (requires admin privileges)
 
@@ -57,6 +62,7 @@ Start menu. Note that on the first startup of WSL, you will be asked to choose
 a username and password for your Linux user.
 
 <br>
+<br>
 
 ## Linux 🐧
 
@@ -72,4 +78,4 @@ To check your version of `bash`, run:
 bash --version
 ```
 
-Ideally you should have a version of `bash` >= `5.0` (but at least >= `4.0`).
+Ideally, you should have a version of `bash` >= `5.0` (but at least >= `4.0`).

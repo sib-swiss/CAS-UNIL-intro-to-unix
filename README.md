@@ -1,20 +1,21 @@
 # Introduction to Linux / UNIX and the Bash shell - UNIL CAS in Data Stewardship
 
-Welcome to the home page of the **Introduction to Linux / UNIX and the Bash
-shell** course of the **University of Lausanne CAS in Data Stewardship**.
+Welcome to the home page of the
+**Introduction to Linux / UNIX and the Bash shell** course of the
+**University of Lausanne CAS in Data Stewardship**.
 
 This one-day course provides an introduction to the open-source
 **[Linux](https://en.wikipedia.org/wiki/Linux)** /
 **[UNIX](https://en.wikipedia.org/wiki/Unix)**
-operating system, and the **[Bash shell](https://www.gnu.org/software/bash)**.
+operating system and the **[Bash shell](https://www.gnu.org/software/bash)**.
 
 <br>
 
-> **🔥 Important:** this course requires participants to
-> **prepare before the in-person class**. Please make sure to:
+> **🔥 Important:** this course requires participants to prepare before the
+> in-person class. Please make sure to:
 >
 > * Set up [your environment](environment_setup.md).
-> * Complete the [pre-course tasks](#pre-course-tasks-).
+> * Complete the [pre-course tasks](#pre-course-tasks).
 
 <br>
 
@@ -22,36 +23,43 @@ operating system, and the **[Bash shell](https://www.gnu.org/software/bash)**.
 
 ### Course material
 
-* [Course slides](slides_intro_to_UNIX.pdf)
+* [Course slides (PDF)](https://github.com/sib-swiss/CAS-UNIL-intro-to-unix/raw/main/slides_intro_to_UNIX.pdf)
 * [Exercise instructions](exercise_instructions.md)
-* [Exercise material](https://github.com/sib-swiss/CAS-UNIL-intro-to-unix/raw/main/exercises.zip)
+* [Exercise material (.zip)](https://github.com/sib-swiss/CAS-UNIL-intro-to-unix/raw/main/exercises.zip)
 * [Exam instructions](exam_instructions.md)
+
+<br>
 
 ### Environment setup
 
 The only technical requirement for the course is having a laptop with a
-reasonably recent version of either a `bash` shell (version >= `4.0`), or a
+reasonably recent version of either a `bash` shell (version >= `4.0`) or a
 `zsh` shell (the default shell on macOS since 2019) installed.
 
-You can display your version of `bash` with the command: `bash --version`
+You can display your version of `bash` with the command:
 
-* Please read the **[environment setup instructions](environment_setup.md)**
-  for details.
-* Make sure to set up your environment **before the start of the course**.
+```sh
+bash --version
+```
+
+Please read the **[environment setup instructions](environment_setup.md)**
+for details. Make sure to set up your environment
+**before the start of the course**.
 
 <br>
 <br>
 
 ## Course description 🦉
 
-This course provides an **introduction to using the Linux / UNIX** operating
-system via the **command line interface (CLI)**, as well as an introduction to
-the **Bash shell** and some of the Linux / UNIX **core utilities** commands.
+This course provides an
+**introduction to using the Linux / UNIX operating system** via the
+**command line interface (CLI)**, as well as an introduction to
+the **Bash shell** and some of the Linux / UNIX **core commands**.
 
 More specifically, the course covers the following topics:
 
-* What is Linux / UNIX and why use it?
-* Navigating the file system.
+* What is Linux / UNIX and why use it ?
+* Navigating the filesystem.
 * Shell expansions: brace, tilde, and filename expansion.
 * File and directory management: create, move, copy, delete.
 * File access permissions and ownership.
@@ -66,12 +74,14 @@ More specifically, the course covers the following topics:
 <br>
 <br>
 
-## Course structure
+## Course structure 🌱
 
-Because of its limited in-class time (0.5 days), this course requires
-participants to **self-study before and after the class**.
+Due to limited in-class time (0.5 days), this course requires participants
+to **self-study before and after the class**.
 
-### Pre-course tasks 🌱
+<br>
+
+### Pre-course tasks
 
 We kindly ask you to complete the following tasks
 **before the start of the course**:
@@ -86,15 +96,12 @@ We kindly ask you to complete the following tasks
   * [Chapter 4: UNIX shell - filesystem commands](https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/5/start.html)
 * **Complete exercises 1 and 2** of the
   [course exercises](exercise_instructions.md) (~1h).
-  * Make sure to read the **Before you start** section at the top of the
-    exercise instructions before you start working on them.
-  * Only do **exercises 1 and 2**. Other exercises will be done during class.
-  * For exercise 1, please also complete the **Additional Tasks** sections.
-  * For exercise 2, the **Additional Tasks** section is optional.
+  * For exercise 1, please also complete the **Additional Task** sections.
+  * For exercise 2, the **Additional Task** sections are optional.
 
 <br>
 
-### On-site course 🔥
+### On-site course
 
 During the in-class part of the course, the following topics will be covered.
 
@@ -103,9 +110,9 @@ During the in-class part of the course, the following topics will be covered.
 
 <br>
 
-### Post-course tasks ⚡
+### Post-course tasks
 
-Exercises to do on your own, as post-course tasks.
+Exercises to do on your own, after the class.
 
 * **Exercises 4**, **6**, and **7B** (~2h).
-* The **Additional Tasks** sections of the exercises are optional.
+* The **Additional Task** sections of the exercises are optional.
