@@ -33,7 +33,7 @@ The only technical requirement for the course is having a laptop with a
 reasonably recent version of either a `bash` shell (version >= `4.0`), or a
 `zsh` shell (the default shell on macOS since 2019) installed.
 
-You can display your version of `bash` with the command `bash --version`.
+You can display your version of `bash` with the command: `bash --version`
 
 * Please read the **[environment setup instructions](environment_setup.md)**
   for details.

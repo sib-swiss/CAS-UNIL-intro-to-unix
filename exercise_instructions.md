@@ -84,15 +84,20 @@ Open a new terminal (shell) and perform the following tasks:
    </details>
 
 3. **List the content** of the `exercise_1/` directory with `ls`, `ls -l`,
-   `ls -lh`, and `ls -lha`.
-   * **❓ Question:** what do the `-l`, `-h` and `-a` options do?
-   * **🎯 Hint:** you can use `man ls` to display the help for the `ls`
-     command. To exit the help, simply type `q` on your keyboard.
+   `ls -lh`, and `ls -lha`
+
+   * **❓ Question:** what do the `-l`, `-h` and `-a` options do ?
+   * **🎯 Hint:** you can use `man ls` or `ls --help` to display the help for
+     the `ls` command. To exit the help, simply type `q` on your keyboard.
    * **✨ Notes:**
      * One-letter options can be grouped together, so `ls -lha` is the
-       same as `ls -l -h -a`.
+       same as `ls -l -h -a`
      * Some options have both a "short" and a "long" form. E.g. `ls -lah`
-       is the short form for `ls -l --all --human-readable`.
+       is the short form for `ls -l --all --human-readable`
+     * ⚠️ Long option forms are largely a **GNU extension**: they are
+       available in the GNU versions of the commands (found on Linux), but
+       are mostly absent from the BSD versions found on macOS. On macOS, `ls`
+       only accepts the short form of its options (e.g. `ls -lah`)
 
    <br>
    <details><summary><b>✅ Solution</b></summary>
@@ -121,7 +126,7 @@ Open a new terminal (shell) and perform the following tasks:
    first) and in reverse chronological order (oldest file first).
 
    * **🎯 Hint:** the option to sort by time is `-t`. To reverse sorting use
-     `-r`/`--reverse`.
+     `-r`/`--reverse`
 
    <br>
    <details><summary><b>✅ Solution</b></summary>
@@ -159,13 +164,13 @@ Open a new terminal (shell) and perform the following tasks:
    directory):
 
    * Start by typing `ls a`, then press **Tab**. You will see that the
-     shell auto-completes up to `ls a_`.
+     shell auto-completes up to `ls a_`
    * Double-press the **Tab** key to display all possible matches at this
      point. You should see 3 values: `a_directory/`, `a_regular_file.txt` and
-     `a_regular_file_with_a_really_long_name.md`.
+     `a_regular_file_with_a_really_long_name.md`
    * To disambiguate between the 3 possible matches, enter the additional
      character `r` and press **Tab** again. The shell should now
-     auto-complete up to `ls a_regular_file`.
+     auto-complete up to `ls a_regular_file`
    * At this point there are 2 possible matches left: `a_regular_file.txt` and
      `a_regular_file_with_a_really_long_name.md`. To disambiguate between them,
      enter the additional character `_` and then press **Tab** again.
@@ -188,13 +193,13 @@ Open a new terminal (shell) and perform the following tasks:
    <br>
    <details><summary><b>✅ Solution</b></summary>
 
-    **`.`** is the **relative path of the current directory**. Therefore,
+    `.` is the **relative path of the current directory**. Therefore,
     running `cd .` has no effect as it simply changes to the same directory
     we are already in.
 
     The `.` shortcut is useful in some situations. E.g. if you want to copy
     a file to the current directory you can do `cp /file/to/copy .`, or you
-    can run an executable located in the current directory with `./run_me.sh`.
+    can run an executable located in the current directory with `./run_me.sh`
 
     <br>
     </details>
@@ -202,7 +207,7 @@ Open a new terminal (shell) and perform the following tasks:
 7. **Change your working directory** to the `exercise_2/` directory using its
    **relative path**. `exercise_2/` is located in the same parent directory
    as `exercise_1`, your current working directory.
-    * **🎯 Hint:** the relative path of the parent directory is **`..`**
+    * **🎯 Hint:** the relative path of the parent directory is `..`
 
    <br>
    <details><summary><b>✅ Solution</b></summary>
@@ -246,18 +251,33 @@ Open a new terminal (shell) and perform the following tasks:
    </details>
 
 9. **Create an alias named `ll`** that runs the following command:
-   `ls -lh --group-directories-first --color=auto`.
 
-   **✨ Notes:**
-   * On some Linux systems, an `ll` alias may already exist.
-   * To list your currently defined aliases, you can type `alias` to list them
-     all, or `alias <name of alias>` to list a specific one (e.g. `alias ll`).
-   * Aliases only live as long as your current shell session. To make aliases
-     permanent, they must be defined inside a **configuration file**, such as
-     **`~/.bashrc`**, so that they get loaded each time a new shell is spawned.
-   * To remove an alias from the current shell, use `unalias <alias name>`.
-   * To remove a permanent alias, remove it from the config file
-     (e.g. `.bashrc`) where it is defined.
+    ```sh
+     ls -lh --group-directories-first --color=auto
+    ```
+
+   **🍏 macOS users:** `--group-directories-first` does not exist in the BSD
+   version of `ls` found on macOS, and `--color` is only available in recent
+   versions. macOS users should instead create an alias for the following
+   command:
+
+    ```sh
+     # Command for macOS. -G option turns on colored output.
+     ls -lhG
+    ```
+
+   > **✨ Notes:**
+   > * On some Linux systems, an `ll` alias may already exist.
+   > * To list your currently defined aliases, you can type `alias` to list
+   >   them all, or `alias <name of alias>` to list a specific one (e.g.
+   >   `alias ll`).
+   > * Aliases only live as long as your current shell session. To make aliases
+   >   permanent, they must be defined inside a **configuration file**, such as
+   >   **`~/.bashrc`**, so that they get loaded each time a new shell is
+   >   spawned.
+   > * To remove an alias from the current shell, use: `unalias <alias name>`
+   > * To remove a permanent alias, remove it from the config file
+   >   (e.g. `.bashrc`) where it is defined.
 
    <br>
    <details><summary><b>✅ Solution</b></summary>
@@ -265,6 +285,9 @@ Open a new terminal (shell) and perform the following tasks:
      ```sh
      # Create a new "ll" alias:
      alias ll='ls -lh --group-directories-first --color=auto'
+
+     # On macOS (BSD version of "ls"), use the following instead:
+     alias ll='ls -lhG'
      ```
 
     Here are some more useful commands for aliases:
@@ -290,8 +313,8 @@ Open a new terminal (shell) and perform the following tasks:
     <details><summary><b>✅ Solution</b></summary>
 
      ```sh
-     du -sh a_directory  # 20K  (20 kilobytes)
-     du -sh b_directory  # 4K   (directory is empty, 4K is the size of an empty dir)
+     du -sh a_directory  # 20K (20 kilobytes)
+     du -sh b_directory  # 4K  (directory is empty)
 
      # Using the ? wildcard character, we can also compute the size of both
      # directories in a single command.
@@ -307,8 +330,8 @@ Open a new terminal (shell) and perform the following tasks:
     following commands - look at how file size is indicated:
     * **`ls -l`**: lists the file size in **bytes/octets**.
     * **`ls -lh`** (you can also use your new `ll` alias!): the **`-h`** option
-      (the short form of `--human-readable`) lists the file size in a more
-      readable format, using the `k`, `M`, `G`, ... unit abbreviations for
+      (the short form of `--human-readable` in GNU `ls`) lists the file size
+      in a more readable format, using the `k`, `M`, `G`, ... abbreviations for
       `kB` (kilobyte), `MB` (megabyte), `GB` (gigabyte), etc.
 
     **✨ Note:** in everyday language, the term **kilobyte** (abbreviated `kB`)
@@ -339,7 +362,7 @@ Open a new terminal (shell) and perform the following tasks:
   name is *filename expansion*.
 * **🔥 Tip:** If you don't want a specific wildcard character to expand, you
   can **escape it** by prefixing it with **`\`**.  
-  E.g. `ls test_\*.md` will try to list a file named exactly `test_*.md`.
+  E.g. `ls test_\*.md` will try to list a file named exactly `test_*.md`
 
 <br>
 
@@ -370,12 +393,16 @@ Using `ls` and wildcard characters, perform the following tasks:
       letter, `ls -l I*` is sufficient to list all files starting with the
       letter `i`.
       If there were also files starting with lower case letters, we would need
-      to use `ls -l [iI]*`.
+      to use `ls -l [iI]*`
 
     * **⚠️ Warning:** `ls -l [iI]*` and `ls -l i* I*` are not equivalent
       expressions:
-     `ls -l i* I*` returns an error unless there exists *both* files starting
-      with `i` and with `I` (you can test it in your terminal).
+      `ls -l i* I*` returns an error unless there exists *both* files starting
+      with `i` and with `I` (you can test it in your terminal). Note that
+      there is a small difference here between `bash` and `zsh`:
+      * `bash` will return an error code, but still list the files matching the
+        `I*` pattern (because there is a match for that pattern).
+      * `zsh` will only return an error.
 
    <br>
    </details>
@@ -486,8 +513,9 @@ Using `ls` and wildcard characters, perform the following tasks:
 
     ```sh
     ls -l *[ao]??x_*ra *[ao]??x_*i  # Solution using pure globbing. Requires some duplication.
-    ls -l *[ao]??x_*@(ra|i)         # Solution using pattern matching.
     ls -l *[ao]??x_*{ra,i}          # Solution using both globbing and brace expansion.
+    ls -l *[ao]??x_*@(ra|i)         # Solution using pattern matching.
+                                    # Needs "setopt KSH_GLOB" to work in zsh.
 
     # Myosorex_eisentrauti  (Eisentraut's mouse shrew).
     # Pteralopex_flanneryi  (Greater monkey-faced bat).
@@ -495,75 +523,50 @@ Using `ls` and wildcard characters, perform the following tasks:
     # Sorex_sclateri        (Sclater's shrew).
     ```
 
-    **✨ Note:** to avoid duplicating the `*[ao]??x_*` part, we can use either
-    **pattern matching** or **brace expansion**:
-    * **[Pattern matching](https://www.gnu.org/software/bash/manual/bash.html#Pattern-Matching)**:
-      here **`@(ra|i)`** matches either the pattern `ra` or `i`.
-    * **[Brace expansion](https://www.gnu.org/software/bash/manual/bash.html#Brace-Expansion)**:
-      during the shell's processing, braces `{}` are expanded first (before
-      globbing), and therefore:
-
-      ```sh
-      ls -l *[ao]??x_*{[ra],i}
-      ```
-
-      is expanded into:
-
-      ```sh
-      ls -l *[ao]??x_*[ra] *[ao]??x_*i
-      ```
-
-      before file expansion (globbing) is performed.
-
-   <br>
-   </details>
-
-6. **Try to add quotes (single or double) around a globbing pattern** with
-   wildcards, e.g. `ls -l "I*"`.
-
-   * **❓ Question:** what difference do the quotes make (if any)?
-   * **❓ Question:** can you think of a use case for using quotes around a
-     pattern with wildcards?
-
-   <br>
-   <details><summary><b>✅ Solution</b></summary>
-
-    Adding single or double quotes around the search pattern prevents the
-    shell from performing file expansion (globbing). Instead, it will try to
-    literally match the pattern. E.g. `ls -l 'I*'` in the example below will try
-    to find a file named `I*`, instead of any file starting with the letter `I`.
-
-     ```sh
-     ls -l 'I*'
-     # ls: cannot access 'I*': No such file or directory
-     ```
-
-    One use case for adding quotes is if we e.g. want to store the pattern
-    to match as a shell variable (e.g. in a shell script):
-
-     ```sh
-     # We store the pattern "I*" in a variable named "search_pattern".
-     search_pattern="I*"
-     echo ${search_pattern}
-
-     # Later we can use our stored pattern to match files:
-     ls -l ${search_pattern}
-     # -> lists all files starting with "I".
-     ```
-
-    In this case, if we did not use quotes around `"I*"` when creating our
-    `search_pattern` variable, file globbing would have occurred and the value
-    of the variable would have been set to the name(s) of the file(s) matching
-    the globbing pattern, and not the pattern itself.
-
-     ```sh
-     search_pattern=I*
-     echo ${search_pattern}  # The value of `search_pattern` is set to "Indri_indri"
-                             # instead of "I*"... not what we wanted.
-     ```
+    > **✨ Note:** to avoid duplicating the `*[ao]??x_*` part, we can use
+    > either **pattern matching** or **brace expansion**:
+    >
+    > **[Pattern matching](https://www.gnu.org/software/bash/manual/bash.html#Pattern-Matching)**:
+    > here `@(ra|i)` matches either the pattern `ra` or `i`. Note that this
+    > syntax is not always enabled by default: in `zsh` it must be turned on
+    > with `setopt KSH_GLOB`, and in `bash` scripts with `shopt -s extglob`
+    > (in an interactive `bash` it is usually already enabled).
+    >
+    > ```zsh
+    >  setopt KSH_GLOB          # In bash: shopt -s extglob
+    >  ls -l *[ao]??x_*@(ra|i)
+    > ```
+    >
+    > **[Brace expansion](https://www.gnu.org/software/bash/manual/bash.html#Brace-Expansion)**:
+    > during the shell's processing, braces `{}` are expanded first (before
+    > globbing), and therefore:
+    >
+    > ```sh
+    >  ls -l *[ao]??x_*{ra,i}
+    > ```
+    >
+    > is expanded into:
+    >
+    > ```sh
+    >  ls -l *[ao]??x_*ra *[ao]??x_*i
+    > ```
+    >
+    > before file expansion (globbing) is performed.
 
    <br>
    </details>
+
+6. **Try to add quotes (single or double) around a glob pattern**,
+   e.g. `ls -l "I*"`
+
+   You should observe that when quoted, filename expansion (globbing) is no
+   longer performed by the shell. In our example, the shell will not expand
+   the pattern `I*`, and therefore pass literally `I*` to the `ls` command,
+   which will then try to find a file literally named `I*`.
+
+   When running certain commands (e.g. passing a pattern to the `find` command),
+   filename expansion is not desirable and this is when quoting a glob pattern
+   becomes useful.
 
 <br>
 <br>
@@ -728,7 +731,7 @@ Enter the directory `exercise_3/` and perform the following tasks:
    * Copy the entire directory `species_by_genus/Dendrolagus` - with all its
      content - to the root of `exercise_3`.  
      **🎯 Hint:** to make a **recursive** copy of a directory, the option is
-     `-r`/`--recursive`.
+     `-R`/`--recursive`.
    * Rename the directory to `Tree-kangaroos`.
    * Delete the directory `Tree-kangaroos` and its content **in a safe way**.
 
@@ -737,7 +740,7 @@ Enter the directory `exercise_3/` and perform the following tasks:
 
     ```sh
     cd ..                                  # Change directory to `exercise_3`.
-    cp -r species_by_genus/Dendrolagus/ .  # Copy the directory and its content.
+    cp -R species_by_genus/Dendrolagus/ .  # Copy the directory and its content.
     mv Dendrolagus/ Tree-kangaroos         # Rename the directory.
     ```
 
@@ -867,7 +870,7 @@ Enter the `exercise_4` directory and perform the following tasks using the
    > ```sh
    >  # Create a test file with a .png extension.
    >  touch test.png
-   > 
+   >
    >  # Now compare the output of the 2 commands:
    >  find . -type f -name *.png
    >  find . -type f -name "*.png"
@@ -892,25 +895,37 @@ Enter the `exercise_4` directory and perform the following tasks using the
     ```
 
     > **✨ Notes:**
-    > The `-or` operator has a **lower precedence** than the implicit `-and`
-    > that separates search criteria. As a result, `-type f` applies only to
-    > the criterion next to it, and must be repeated on each side of the `-or`.
     >
-    > Grouping the criteria with escaped parentheses `\( ... \)` is an
-    > alternative that avoids the repetition:
+    > * The `-or` operator has a **lower precedence** than the implicit `-and`
+    >   that separates search criteria. As a result, `-type f` applies only to
+    >   the criterion next to it, and must be repeated on each side of `-or`.
     >
-    > ```sh
-    > find . -type f \( -name "*.png" -or -name "*.jpeg" \)
-    > ```
+    >   Grouping the criteria with escaped parentheses `\( ... \)` is an
+    >   alternative that avoids the repetition:
     >
-    > If you are familiar with
-    > [regular expressions](https://www.regular-expressions.info), you can also
-    > use them with the `find` command by passing the **`-regex`** option.
-    > Here we find all `.jpeg` or `.png` files (same as above) using a regexp:
+    >   ```sh
+    >   find . -type f \( -name "*.png" -or -name "*.jpeg" \)
+    >   ```
     >
-    > ```sh
-    > find . -type f -regex ".*\.jpeg\|.*\.png"
-    > ```
+    > * If you are familiar with
+    >   [regular expressions](https://www.regular-expressions.info), you can
+    >   also use them with the `find` command by passing the **`-regex`**
+    >   option. Here we find all `.jpeg` or `.png` files (same as above) using
+    >   a regexp:
+    >
+    >   ```sh
+    >   find . -type f -regex ".*\.jpeg\|.*\.png"
+    >   ```
+    >
+    >   ⚠️ On macOS, the BSD version of `find` interprets `-regex` patterns as
+    >   **basic** regular expressions, in which the `\|` alternation - a GNU
+    >   extension - is not available. The equivalent command on macOS is the
+    >   following, where the **`-E`** option (BSD only) selects **extended**
+    >   regular expressions:
+    >
+    >   ```sh
+    >   find -E . -type f -regex ".*\.(jpeg|png)"
+    >   ```
 
    <br>
    </details>
@@ -1048,8 +1063,12 @@ tasks on the `protein_sequences.fasta` file:
    * To display the entire file **except for the last `X` lines** we can use
      **`head -n-X`** (replace `X` by the number of lines you want to skip
      at the end of the file).
+
+     **⚠️ macOS users** Negative values for `-n` are a GNU extension: they do
+     not work with the BSD version of `head` found on macOS.
+
    * Conversely, **`tail -n+X`** will skip the first `X` lines, then print all
-     remaining lines until the end of the file.
+     remaining lines until the end of the file. This one also works on macOS.
 
    <br>
    </details>
@@ -1446,11 +1465,15 @@ your shell:
 
 ```sh
 # Sort and merge the 2nd column (gene expression) of 2 of our input files:
-paste <(sort -n array_data-1.csv | \
-  cut -f2 --delim=";") <(sort -n array_data-2.csv | \
-  cut -f2 --delim=";") | \
+paste <(sort -n array_data-1.csv | cut -f2 -d ";") \
+  <(sort -n array_data-2.csv | cut -f2 -d ";") | \
   head
 ```
+
+> **✨ Note:** `-d` is the `cut` option to specify a custom field delimiter
+> (the default is a Tab character). In the GNU version of `cut`, the long form
+> of this option is `--delimiter`. The long form does not exist in the BSD
+> version of the `cut` command (such as found in macOS).
 
 <details><summary><b>🎯 Additional Hint</b></summary>
 
@@ -1473,8 +1496,8 @@ command without creating any intermediate files.
 
 ```sh
 paste <(sort -n array_data-1.csv | tr ";" "\t") \
-      <(sort -n array_data-2.csv | cut -f2 --delim=";") \
-      <(sort -n array_data-3.csv | cut -f2 --delim=";") > final_2.tsv
+      <(sort -n array_data-2.csv | cut -f2 -d ";") \
+      <(sort -n array_data-3.csv | cut -f2 -d ";") > final_2.tsv
 
 # Compare the new output file with the one we produced earlier:
 diff -s final.tsv final_2.tsv
@@ -1490,8 +1513,8 @@ diff -s final{,_2}.tsv   # Same as above, using brace expansion.
 > all the rows):
 
 ```sh
-join --check-order -o 0 1.2 1.3 2.2 -1 1 -2 1 -t ";" \
-     <( join --check-order -o 0 1.2 2.2 -1 1 -2 1 -t ";" \
+join -o 0 1.2 1.3 2.2 -1 1 -2 1 -t ";" \
+     <( join -o 0 1.2 2.2 -1 1 -2 1 -t ";" \
              <( sort array_data-1.csv ) \
              <( sort array_data-2.csv ) \
       ) \
@@ -1500,6 +1523,10 @@ join --check-order -o 0 1.2 1.3 2.2 -1 1 -2 1 -t ";" \
 # Compare the new output file with the one we produced earlier:
 diff -s final{,_3}.tsv
 ```
+
+> **✨ Note:** in the GNU version of `join`, the option **`--check-order`** can
+> be added to make the command fail if the input files are not properly sorted.
+> This option does not exist in the BSD version of `join` found on macOS.
 
 </details>
 
@@ -1640,24 +1667,23 @@ Here are some commands and their options that are useful for this exercise:
 <br>
 
 <details><summary><b>✅ Solution Part B</b></summary>
-<p>
 
 There are multiple ways to perform this task, here are a few possibilities.
 
-* **✨ Note:** some pipelines below make use of the `grep` option **`-o`**,
-  which instructs `grep` to only output the actual matching pattern instead of
-  the entire line on which the match is found.
+> **✨ Note:** some pipelines below make use of the `grep` option **`-o`**,
+> which instructs `grep` to only output the actual matching pattern instead of
+> the entire line on which the match is found.
 
 ```sh
-grep "^>" sequences.fasta | cut -f2 --delim="=" | cut -f1 --delim=" " | \
+grep "^>" sequences.fasta | cut -f2 -d "=" | cut -f1 -d " " | \
   sort | uniq -c | sort -nr | head
 
-grep -o "OS=[a-zA-Z]*" sequences.fasta | cut -f2 --delim="=" | sort | \
+grep -o "OS=[a-zA-Z]*" sequences.fasta | cut -f2 -d "=" | sort | \
   uniq -c | sort -nr | head
 
 # Same as above, but using the "[[:alpha:]]" syntax to indicate we only want
 # to match alphabetic letters and not e.g. spaces (or numbers).
-grep -o "OS=[[:alpha:]]*" sequences.fasta | cut -f2 --delim="=" | sort | \
+grep -o "OS=[[:alpha:]]*" sequences.fasta | cut -f2 -d "=" | sort | \
   uniq -c | sort -nr | head
 
 # Output of the pipe: the 10 most frequent genera and their counts in the file.
@@ -1676,7 +1702,7 @@ grep -o "OS=[[:alpha:]]*" sequences.fasta | cut -f2 --delim="=" | sort | \
 Here is another solution that makes use of a more complicated
 **regular expression** to directly isolate the genus name. For this we must:
 
-* Use `grep` with "Perl"-style regular expressions by adding the **`-P`**
+* Use `grep` with "Perl style" regular expressions by adding the **`-P`**
   option.
 * Use a **lookbehind match**: `(?<=OS=)` matches something located behind the
   pattern `OS=`.
@@ -1685,9 +1711,15 @@ Here is another solution that makes use of a more complicated
 grep -oP "(?<=OS=)[a-zA-Z]+ " sequences.fasta | sort | uniq -c | sort -nr | head
 ```
 
-**🙈 [Regular expressions](https://en.wikipedia.org/wiki/Regular_expression)**
-are a powerful tool to do sophisticated pattern matching. However they are
-beyond the scope of this course.
+> **✨ Notes:**
+>
+> * The `-P` option is only available in the GNU version of `grep`. It does
+>   not exist in the BSD version found on macOS, where the
+>   `grep -o "OS=[[:alpha:]]*"` solution shown above must be used instead.
+>
+> * **🙈 [Regular expressions](https://en.wikipedia.org/wiki/Regular_expression)**
+>   are a powerful tool to do sophisticated pattern matching. However they are
+>   beyond the scope of this course.
 
 </details>
 
@@ -1761,7 +1793,7 @@ red_list_dir=../exercise_2/RedList_mammals
 
 # Loop through all genera and copy the files for each in the correct
 # subdirectory of "species_by_genus".
-for genus in $( ls ${red_list_dir} | cut -f1 --delim="_" | sort | uniq ); do
+for genus in $( ls ${red_list_dir} | cut -f1 -d "_" | sort | uniq ); do
     mkdir species_by_genus/${genus}                          # Create dir for genus.
     cp ${red_list_dir}/${genus}_* species_by_genus/${genus}  # Copy files for genus.
 done
