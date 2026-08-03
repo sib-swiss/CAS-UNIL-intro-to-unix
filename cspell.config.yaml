@@ -1,0 +1,77 @@
+version: "0.2"
+language: en-US
+ignorePaths:
+  - ToDo.md
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - abix
+  - ACCD
+  - ACON
+  - Aconitate
+  - Alta
+  - Arabidopsis
+  - BACSU
+  - bicornis
+  - Canis
+  - Ceratotherium
+  - concolor
+  - Crocidura
+  - Dendrolagus
+  - Dicero
+  - Dicerorhinus
+  - Diceros
+  - Eisentraut's
+  - eisentrauti
+  - Escherichia
+  - Eubalaena
+  - extglob
+  - fasta
+  - flanneryi
+  - Floresta
+  - gibibyte
+  - gibibytes
+  - glacialis
+  - grovesi
+  - hydratase
+  - indri
+  - isoform
+  - IUCN
+  - Javan
+  - kibibyte
+  - lhtr
+  - Marmota
+  - mebibyte
+  - Moodle
+  - Myosorex
+  - Nomascus
+  - Oryza
+  - Pisum
+  - Plecturocebus
+  - Pteralopex
+  - pulchra
+  - Rattus
+  - sativum
+  - Sclater's
+  - sclateri
+  - setopt
+  - shopt
+  - siki
+  - simum
+  - sondaicus
+  - Sorex
+  - subtilis
+  - sumatrensis
+  - tebibyte
+  - titi
+  - unalias
+  - unicornis
+  - UNIL
+  - untar
+  - vancouverensis
+  - ztvf
+  - zxvf
+ignoreWords:
+  - enate
+  - opex
+import: []
