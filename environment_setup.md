@@ -23,19 +23,15 @@ To start a shell session, open the "Terminal" application.
 > [Homebrew package manager](https://brew.sh).
 
 <br>
-<br>
 
 ## Windows 🪟
 
 Windows does not natively come with a `bash` shell, but it can be installed
-via different means. We suggest two options, in order of ease of installation
-(easiest first).
+via different means. We suggest two options:
 
-> **✨ Note:** Git Bash (option 1) is sufficient for this course. Choose WSL
-> (option 2) if you want a genuine Linux environment. Installing WSL requires
-> admin privileges.
-
-<br>
+* **Git Bash (option 1)** - the easier option, and sufficient for this course.
+* **WSL (option 2)** - choose WSL if you want a genuine Linux environment.
+  Installing WSL requires admin privileges.
 
 ### Option 1: Git Bash
 
@@ -44,8 +40,6 @@ Install [Git for Windows](https://gitforwindows.org), which comes with a
 
 To start a shell session, open the "Git Bash" application from the Windows
 Start menu.
-
-<br>
 
 ### Option 2: WSL - Windows Subsystem for Linux (requires admin privileges)
 
@@ -62,7 +56,6 @@ Start menu. Note that on the first startup of WSL, you will be asked to choose
 a username and password for your Linux user.
 
 <br>
-<br>
 
 ## Linux 🐧
 
@@ -78,4 +71,4 @@ To check your version of `bash`, run:
 bash --version
 ```
 
-Ideally, you should have a version of `bash` >= `5.0` (but at least >= `4.0`).
+Ideally, you should have a version of `bash` >= `5.0`, but at least >= `4.0`.

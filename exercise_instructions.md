@@ -10,8 +10,8 @@
   directory named `exercises`, with all the data needed for the course
   exercises.
 
-* **📝 Additional Tasks:** at the end of most exercises, you will find one
-  or more sections named **Additional Task**. These contain tasks to complete
+* **🔮 Additional tasks:** at the end of most exercises, you will find one
+  or more sections named **Additional task**. These contain tasks to complete
   **if you have the time** and **after having completed the main exercise**.
   Additional task sections will not be corrected in class, but their solutions
   are given in this document.
@@ -35,11 +35,7 @@
 * 🐚 The exercise instructions are designed to work with the **bash** shell,
   but should also work in other shells, such as the **zsh** shell that is
   found by default on macOS. To find out what shell you are currently using,
-  you can run the following command in your terminal:
-
-   ```sh
-   echo $0
-   ```
+  you can run the following command in your terminal: `echo $0`
 
 <br>
 <br>
@@ -54,15 +50,15 @@ the content of directories.
 
 Open a new terminal (shell) and perform the following tasks:
 
-1. **Print the path of your current working directory** with the `pwd` command.
+1. **Print the path of your current working directory** with the command `pwd`.
    This will show you where you are currently located in the directory tree.
 
 2. **Navigate to the course's `exercises/` directory** (the one you unpacked
    from the `.zip` archive file), then enter the `exercise_1/` subdirectory.
    To make sure you are at the right location, use the `pwd` command again.
 
-    <br>
     <details><summary><b>✅ Solution</b></summary>
+    <br>
 
      ```sh
      # The actual location of the "exercises" directory depends on where you
@@ -73,8 +69,8 @@ Open a new terminal (shell) and perform the following tasks:
      pwd
      ```
 
-    **✨ Note:** changing directory to `exercise_1` can of course also be done
-    in a single command:
+    **✨ Note:** changing directory to `exercise_1` can also be done in a
+    single command:
 
      ```sh
      cd /path/to/directory/exercises/exercise_1
@@ -95,15 +91,16 @@ Open a new terminal (shell) and perform the following tasks:
    > **✨ Notes:**
    > * One-letter options can be grouped together, so `ls -lha` is the
    >   same as `ls -l -h -a`
-   > * Some options have both a "short" and a "long" form. E.g. `ls -lah`
+   > * Some options have both a **short** and a **long form**. E.g. `ls -lah`
    >   is the short form for `ls -l --all --human-readable`
-   > * ⚠️ Long option forms are largely a **GNU extension**: they are
+   >
+   >   ⚠️ Long option forms are largely a **GNU extension**: they are
    >   available in the GNU versions of the commands (found on Linux), but
    >   are mostly absent from the BSD versions found on macOS. On macOS, `ls`
    >   only accepts the short form of its options (e.g. `ls -lah`)
 
-    <br>
     <details><summary><b>✅ Solution</b></summary>
+    <br>
 
     ```sh
     ls       # Prints the names of files and directories.
@@ -112,13 +109,13 @@ Open a new terminal (shell) and perform the following tasks:
              # This provides additional details for each file/directory, such
              # as its permissions, its size and its last modification date.
 
-    ls -lh   # Adding the "-h" option displays file sizes in "human readable"
+    ls -lh   # Adding the '-h' option displays file sizes in "human readable"
              # format. File sizes are shown in kB, MB, or GB, instead of
              # their size in bytes (octets).
 
-    ls -lha  # Adding the "-a" option additionally displays hidden files and
+    ls -lha  # Adding the '-a' option additionally displays hidden files and
              # directories. These are files/directories whose name starts with
-             # a dot ".".
+             # a dot (e.g. '.bashrc').
              # Hidden files are often used to store program configurations.
     ```
 
@@ -131,12 +128,12 @@ Open a new terminal (shell) and perform the following tasks:
    > **🎯 Hint:** the option to sort by time is `-t`. To reverse sorting use
    > `-r`/`--reverse`
 
-    <br>
     <details><summary><b>✅ Solution</b></summary>
+    <br>
 
     ```sh
-    ls -lht    # The "-t" option sorts by time, newest file first.
-    ls -lhtr   # Adding the "-r" option reverses the order of sorting
+    ls -lht    # The '-t' option sorts by time, newest file first.
+    ls -lhtr   # Adding the '-r' option reverses the order of sorting
                # (oldest file first).
     ```
 
@@ -169,8 +166,14 @@ Open a new terminal (shell) and perform the following tasks:
    * Start by typing `ls a`, then press **Tab**. You will see that the
      shell auto-completes up to `ls a_`
    * Double-press the **Tab** key to display all possible matches at this
-     point. You should see 3 values: `a_directory/`, `a_regular_file.txt` and
-     `a_regular_file_with_a_really_long_name.md`
+     point. You should see 3 values:
+
+     ```sh
+     a_directory/
+     a_regular_file.txt
+     a_regular_file_with_a_really_long_name.md
+     ```
+
    * To disambiguate between the 3 possible matches, enter the additional
      character `r` and press **Tab** again. The shell should now
      auto-complete up to `ls a_regular_file`
@@ -188,14 +191,16 @@ Open a new terminal (shell) and perform the following tasks:
    * You can now press the **Enter** key on your keyboard to run the `ls`
      command with the auto-completed file name.
 
+     <br>
+
 6. In the current working directory, **run the command `cd .`**. You should
    observe that this command has **no net effect** (i.e. it did not change
    directory).
 
    **❓ Question:** what is the meaning of `.` in the command `cd .` ?
 
-    <br>
     <details><summary><b>✅ Solution</b></summary>
+    <br>
 
     `.` is the **relative path of the current directory**. Therefore,
     running `cd .` has no effect as it simply changes to the same directory
@@ -212,75 +217,74 @@ Open a new terminal (shell) and perform the following tasks:
    **relative path**. `exercise_2/` is located in the same parent directory
    as `exercise_1`, your current working directory.
 
-   > **🎯 Hint:** the relative path of the parent directory is `..`
+   > **🎯 Hint:** the relative path of the parent directory is **`..`**
+   >
+   > Multiple `..` can be combined to go up multiple levels. E.g. `cd ../..`
+   > will go up two levels in the directory tree.
 
-    <br>
     <details><summary><b>✅ Solution</b></summary>
+    <br>
 
-     ```sh
-     cd ../exercise_2/
-     ```
+    ```sh
+    cd ../exercise_2/
+    ```
 
-    **`..`** is the **relative path of the parent directory**. Multiple levels
-    of `..` can be combined to go up multiple levels. E.g. `cd ../..` will go
-    up two levels in the directory tree.
-
-    Here is a summary of useful `cd` shortcuts:
-
-     ```sh
-     cd .         # Does nothing, we stay in the same directory.
-     cd ..        # Go to parent directory.
-     cd /         # Go to root directory.
-     cd ~         # Go to user's home directory, on Linux: /home/<user name>.
-     cd -         # Go back to the previous directory.
-     cd           # With no argument, cd brings you back to your home directory.
-     ```
+    **`..`** is the **relative path of the parent directory**.
 
     </details>
     <br>
 
 <br>
 
-### Additional Task - `cd ~` and `cd -` shortcuts
+### 🔮 Additional task - `cd` shortcuts
 
-Try the **`cd ~`** and **`cd -`** shortcuts. What do they do ?
+Here is a list of some useful `cd` shortcuts. Try them out.
 
-<br>
-<details><summary><b>✅ Solution</b></summary>
+```sh
+cd ..   # Go to parent directory.
+cd /    # Go to root directory.
+cd ~    # Go to user's home directory. On Linux: /home/<user name>.
+cd -    # Go back to the previous directory.
+cd      # With no argument, cd brings you back to your home directory.
+```
 
-* **`~`** is a shortcut for the "home directory", and therefore `cd ~` is a
-  shortcut to change directory to your home directory.
+* **`~`** is a special character that the shell expands to a user's
+  **home directory**. Therefore `cd ~` is a shortcut to change directory to
+  your home directory.
 * **`-`** is a shortcut to change to the previous working directory. It is
   handy if you want to return to a directory you were in just previously.
 
-</details>
 <br>
 
-### Additional Task - Shell aliases
+### 🔮 Additional task - Shell aliases
 
 In the shell, it is possible to define your own custom **aliases**. An
 **alias** is simply a custom name (of your choice) that you can use as a
-shortcut to execute a given command.
-
-Usually one creates aliases for commands and options that are frequently
-used. This avoids having to type them over and over again.
+shortcut to execute a given command. Usually one creates aliases for commands
+and options that are frequently used. This avoids having to type them over and
+over again.
 
 Let's **create an alias named `ll`** that runs the `ls` command with some
-useful options:
+useful options. Note the the available options depend on the version of
+`ls` you have on your system (GNU or BSD):
 
-```sh
-# Create a new "ll" alias:
-alias ll="ls -lh --group-directories-first --color=auto"
-```
+* **🐧 Linux and 🪟 Windows (Git Bash, WSL) users:**
 
-**🍏 macOS users:** `--group-directories-first` does not exist in the BSD
-version of `ls` found on macOS, and `--color` is only available in recent
-versions. If you are on macOS, create the alias with the following command:
+    ```sh
+     # Create a new 'll' alias:
+     alias ll="ls -lh --group-directories-first --color=auto"
+    ```
 
-```sh
-# 'll' alias for macOS (BSD version of "ls").
-alias ll="ls -lhG"
-```
+* **🍏 macOS users:** `--group-directories-first` does not exist in the BSD
+  version of `ls` found on macOS, and `--color` is only available in recent
+  versions. If you are on macOS, create the alias with the following command:
+
+    ```sh
+     # 'll' alias for macOS (BSD version of 'ls').
+     alias ll="ls -lhG"
+    ```
+
+<br>
 
 > **✨ Notes:**
 >
@@ -296,11 +300,13 @@ alias ll="ls -lhG"
 > * To remove a permanent alias, remove it from the config file
 >   (e.g. `.bashrc`) where it is defined.
 
+<br>
+
 Here are some more useful commands for working with aliases:
 
 ```sh
 alias        # Lists the currently defined aliases.
-unalias ll   # Removes an alias - here "ll" - from the current shell session.
+unalias ll   # Removes an alias - here 'll' - from the current shell session.
 ```
 
 The `type` command tells if a command is an alias: if yes, the aliased command
@@ -316,18 +322,17 @@ type bash  # -> bash is /usr/bin/bash
 
 <br>
 
-### Additional Task - Directory size
+### 🔮 Additional task - Directory size
 
-To display the size of a directory, we can use the command:
+To display the size of a directory, we can use the following command.
+Try it on the directories found in `exercise_1`.
 
 ```sh
 du -sh <directory>
 ```
 
-Try it on the directories found in `exercise_1`.
-
-<br>
 <details><summary><b>✅ Solution</b></summary>
+<br>
 
   ```sh
   du -sh a_directory  # -> 20K (20 kilobytes)
@@ -341,7 +346,7 @@ Try it on the directories found in `exercise_1`.
 </details>
 <br>
 
-### Additional Task - File size display
+### 🔮 Additional task - File size display
 
 Let's look at a detail of **how the bash shell displays file sizes**.
 
@@ -354,14 +359,20 @@ following commands - look at how file size is indicated:
   in a more readable format, using the `k`, `M`, `G`, ... abbreviations for
   `kB` (kilobyte), `MB` (megabyte), `GB` (gigabyte), etc.
 
+<br>
+
 > **✨ Note:** in everyday language, the term **kilobyte** (abbreviated `kB`)
-> is used for talking interchangeably about either 1000 bytes or 1024 bytes,
-> because they represent almost the same quantity of bytes.
+> is used for talking interchangeably about either **1000 bytes** or
+> **1024 bytes**, because they represent almost the same quantity of bytes.
 >
-> If we really wanted to be precise, the proper name for a unit of 1024 bytes
-> is a _kibibyte_ `KiB`, while a _kilobyte_ designates 1000 bytes. Similarly,
-> a _megabyte_ is 1'000'000 bytes, and a _mebibyte_ is 1024^2 bytes (same
-> with _gigabyte_ vs. _gibibyte_, _terabyte_ vs. _tebibyte_, etc.).
+> If we really wanted to be precise:
+>
+> * The proper name for a unit of **1024 bytes** is a **kibibyte** `KiB`,
+>   while a _kilobyte_ designates 1000 bytes.
+> * Similarly, a **megabyte** is **1'000'000 bytes**, and a **mebibyte** is
+>   **1024^2 bytes**
+> * The same logic applies to _gigabyte_ vs. _gibibyte_, _terabyte_ vs.
+>   _tebibyte_, etc.
 
 <br>
 <br>
@@ -374,19 +385,26 @@ following commands - look at how file size is indicated:
 
 <br>
 
-> **✨ Note:** the correct technical term for the expansion of wildcard
-> characters by the shell is
-> **[filename expansion](https://www.gnu.org/software/bash/manual/bash.html#Filename-Expansion)**,
-> but it is often referred to as **globbing**.
+> **✨ Note:**
 >
-> Globbing only matches **existing file/directory names**: expansion will not
-> happen if there is no matching file/directory. This is why its official
-> name is _filename expansion_.
-
-> **🔥 Tip:** if you don't want a specific wildcard character to expand, you
-> can **escape it** by prefixing it with **`\`**.
+> * The correct technical term for the expansion of wildcard characters by
+>   the shell is
+>   **[filename expansion](https://www.gnu.org/software/bash/manual/bash.html#Filename-Expansion)**,
+>   but it is often referred to as **globbing**.
+> * Globbing only matches **existing file/directory names**: expansion will not
+>   happen if there is no matching file/directory. This is why its official
+>   name is _filename expansion_.
 >
-> E.g. `ls test_\*.md` will try to list a file named exactly `test_*.md`
+> To avoid a wildcard character to expand, you can:
+>
+> * **Escape it** by prefixing it with `\`.
+> * Place it inside double `"` or single `'` quotes.
+>
+> ```sh
+> ls test_\*.md     # Escaping with \
+> ls "test_\*.md"   # Double and single quotes prevent filename expansion.
+> ls 'test_\*.md'
+> ```
 
 <br>
 
@@ -406,8 +424,8 @@ Using `ls` and wildcard characters, perform the following tasks:
 1. **List all files starting with the letter `i`** (upper or lower case).
    > **🎯 Hint:** you should have 1 match.
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
     cd exercise_2/RedList_mammals/
@@ -437,8 +455,8 @@ Using `ls` and wildcard characters, perform the following tasks:
 
    > **🎯 Hint:** you should have 3 matches.
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
     ls -l Rhinoceros_* Dicerorhinus_* Diceros_*
@@ -473,8 +491,8 @@ Using `ls` and wildcard characters, perform the following tasks:
 
    > **🎯 Hint:** you should have 2 matches.
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
     ls -l Nomascus_*[ri]
@@ -504,8 +522,8 @@ Using `ls` and wildcard characters, perform the following tasks:
 
    > **🎯 Hint:** you should have 3 matches.
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
     ls -l *l?[a-h]*_g*
@@ -520,7 +538,7 @@ Using `ls` and wildcard characters, perform the following tasks:
 
 <br>
 
-### Additional Task - Brace expansion and pattern matching
+### 🔮 Additional task - Brace expansion and pattern matching
 
 List the files of species that satisfy **both of the following conditions**:
 
@@ -543,8 +561,8 @@ would be a match, because its genus name _Pteralopex_ contains the pattern
 >
 > You should have 4 matches.
 
-<br>
 <details><summary><b>✅ Solution</b></summary>
+<br>
 
 ```sh
 ls -l *[ao]??x_*ra *[ao]??x_*i  # Solution using pure globbing. Requires some duplication.
@@ -591,7 +609,7 @@ ls -l *[ao]??x_*@(ra|i)         # Solution using pattern matching.
 </details>
 <br>
 
-### Additional Task - Preventing filename expansion with quotes
+### 🔮 Additional task - Preventing filename expansion with quotes
 
 **Try to add quotes** (single or double) around a glob pattern, for instance:
 
@@ -636,8 +654,8 @@ Enter the directory `exercise_3/` and perform the following tasks:
    > This allows you to re-use a command that you wrote earlier, while making
    > changes to it if needed.
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     * **Create directories `species_by_genus` and `species_by_common_name`**.
 
@@ -714,8 +732,8 @@ Enter the directory `exercise_3/` and perform the following tasks:
      [Red Wolf](https://en.wikipedia.org/wiki/Red_wolf) (_Canis rufus_) to the
      directory `species_by_common_name`.
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
      ```sh
      # Copy files for the "Dendrolagus" genus.
@@ -737,8 +755,8 @@ Enter the directory `exercise_3/` and perform the following tasks:
    * Rename the `Canis_rufus` file you just moved into the subdirectory `R` to
      the common name of the species: `Red_wolf`.
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
     cd species_by_common_name/
@@ -759,8 +777,8 @@ Enter the directory `exercise_3/` and perform the following tasks:
    `exercise_2/RedList_mammals`) into `species_by_common_name/B`, while
    directly renaming it to the common name of the species: `Black_rhino`.
 
-    <br>
     <details><summary><b>✅ Solution</b></summary>
+    <br>
 
       ```sh
       # Note: this assumes the current working directory is "species_by_common_name".
@@ -781,8 +799,8 @@ Enter the directory `exercise_3/` and perform the following tasks:
    * Rename the directory to `Tree-kangaroos`.
    * Delete the directory `Tree-kangaroos` and its content **in a safe way**.
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
     cd ..                                 # Change directory to exercise_3.
@@ -813,7 +831,7 @@ Enter the directory `exercise_3/` and perform the following tasks:
 
 <br>
 
-### Additional Task - Automate tasks with `for` loops
+### 🔮 Additional task - Automate tasks with `for` loops
 
 1. **At the root of `exercise_3/`, create a new directory** named
    `species_by_binomial_name` and enter it.
@@ -861,8 +879,10 @@ Enter the directory `exercise_3/` and perform the following tasks:
    not cover all letters of the alphabet. However, this is not a problem here
    because those errors do not prevent the `for` loop from completing.
 
+   <br>
+
+<details><summary><b>✅ Solution</b></summary>
 <br>
-<details><summary><b>✅ Additional task solution</b></summary>
 
 ```sh
 # 1. Create and enter the new directory.
@@ -902,8 +922,8 @@ Enter the `exercise_4` directory and perform the following tasks using the
    > * Use **`-type f`** to restrict the search to files (excludes directories).
    > * You should find a total of 6 `.png` files.
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
      ```sh
      cd exercise_4/
@@ -937,8 +957,8 @@ Enter the `exercise_4` directory and perform the following tasks using the
    > * Use the **`-or`** operator to combine multiple search conditions.
    > * You should find a total of 15 files.
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
      find . -type f -name "*.png" -or -type f -name "*.jpeg"
@@ -984,8 +1004,8 @@ Enter the `exercise_4` directory and perform the following tasks using the
 
 3. Find all `.jpeg` files **larger than `15 kB`**.
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
     find . -type f -name "*.jpeg" -size +15k
@@ -996,7 +1016,7 @@ Enter the `exercise_4` directory and perform the following tasks using the
 
 <br>
 
-### Additional Task - `find`'s `-exec` option
+### 🔮 Additional task - `find`'s `-exec` option
 
 Try to use the **`-exec` option of `find`** to display full details (as given
 by the `ls -lh` command) of the files that are found in point 3 of the main
@@ -1017,8 +1037,8 @@ Your output for all `.jpeg` files larger than `15 kB` should look like this:
 -rw-rw-r-- 1 bob bob 16K Jan  8 11:36 ./images/img.jpeg/linux_suse_logo.jpeg
 ```
 
-<br>
 <details><summary><b>✅ Solution</b></summary>
+<br>
 
 ```sh
 find . -type f -name "*.jpeg" -size +15k -exec ls -lh "{}" +
@@ -1085,19 +1105,19 @@ Your first task in this exercise is to:
 * Extract the `protein_sequences.fasta` file from the archive (i.e. decompress
   and untar the archive file).
 
-  <br>
-  <details><summary><b>✅ Solution</b></summary>
+<details><summary><b>✅ Solution</b></summary>
+<br>
 
-     ```sh
-     # List the content of the TAR archive file.
-     tar -ztvf data.tar.gz
+```sh
+# List the content of the TAR archive file.
+tar -ztvf data.tar.gz
 
-     # Extract data from the archive file.
-     tar -zxvf data.tar.gz
-     ```
+# Extract data from the archive file.
+tar -zxvf data.tar.gz
+```
 
-  </details>
-  <br>
+</details>
+<br>
 
 Now that we have extracted the data from the archive file, perform the
 following tasks on the `protein_sequences.fasta` file:
@@ -1109,6 +1129,7 @@ following tasks on the `protein_sequences.fasta` file:
 
    <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
     cd exercise_5/
@@ -1121,11 +1142,12 @@ following tasks on the `protein_sequences.fasta` file:
 
 2. **Count lines and words** in the file using the **`wc`** command:
 
-   * Count only the number of lines in the file.
-   * Count only the number of words in the file.
+   * How many lines does the file have ?
+   * What is its word count ?
 
    <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
     wc -l protein_sequences.fasta   # -> 19222 lines.
@@ -1140,8 +1162,8 @@ following tasks on the `protein_sequences.fasta` file:
    **❓ Question:** why is `cat` not the most appropriate program here ?
    What could we use instead ?
 
-   <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
     cat protein_sequences.fasta
@@ -1167,6 +1189,7 @@ following tasks on the `protein_sequences.fasta` file:
 
    <br>
    <details><summary><b>✅ Solution</b></summary>
+   <br>
 
     ```sh
     less protein_sequences.fasta
@@ -1177,9 +1200,7 @@ following tasks on the `protein_sequences.fasta` file:
    </details>
    <br>
 
-<br>
-
-### Additional Task - File concatenation with `cat`
+### 🔮 Additional task - File concatenation with `cat`
 
 The primary purpose of `cat` is not to display files (as we have seen above),
 but to con**cat**enate 2 or more files together (this is where the command
@@ -1212,8 +1233,12 @@ Let's try the following example:
 * If you display the content of `file_3` with `cat`, you will see that it
   contains 10 lines: the content of both `file_1` and `file_2`.
 
+<br>
+
 > **🌟 Bonus:** we could also create `file_3` of the example above without
-> creating any intermediate file. This is done using a method called
+> creating any intermediate file.
+>
+> This is done using a method called
 > **[process substitution](https://www.gnu.org/software/bash/manual/bash.html#Process-Substitution)**,
 > which allows treating the output of a command as an input file. The syntax
 > of process substitution is **`<(  )`**.
@@ -1227,15 +1252,15 @@ Let's try the following example:
 
 <br>
 
-### Additional Task - Combining `head` and `tail`
+### 🔮 Additional task - Combining `head` and `tail`
 
 Try to **display only line 100** of `protein_sequences.fasta` by using a
 combination of `head` and `tail`. For this you will need the
 **`|` (pipe) operator**, which allows redirecting the output of one command
 into another.
 
-<br>
 <details><summary><b>✅ Solution</b></summary>
+<br>
 
 `head` and `tail` can be combined to display any section of a file.
 Here is how we print line 100 of the file:
@@ -1291,6 +1316,8 @@ ProbeID;Sample3
 117_at;3.13
 ```
 
+<br>
+
 **Our objective is to merge these 3 files** into a single tab-delimited
 file with 4 columns: `ProbeID` (gene name), `Sample1`, `Sample2` and `Sample3`
 (the gene expression levels recorded in each replicate of the experiment).
@@ -1325,8 +1352,8 @@ Enter the directory `exercise_6/micro-array/data` and have a look at the
 3 input files using `less` or `head`, to get familiar with their structure
 and content.
 
-<br>
 <details><summary><b>✅ Step 1 solution</b></summary>
+<br>
 
 ```sh
 cd exercise_6/micro-array/data/
@@ -1371,12 +1398,14 @@ character. We would like to change this separator to a Tab **`\t`**.
 >   i.e. it does not accept a file name as argument. Therefore, you need to
 >   redirect the content of a file to standard input with `< FILE_NAME`.
 
-> **🐧 Fun fact:** `tr` is one of the (few) commands that
-> **does not accept a file as input** - it only accepts input from _stdin_.
-> This is why we must use `tr < file` or `cat file | tr` to pass input to `tr`.
+> **🐧 Fun fact:**
+>
+> `tr` is one of the (few) commands that **does not accept a file as input** -
+> it only accepts input from _stdin_. This is why we must use `tr < file` or
+> `cat file | tr` to pass input to `tr`.
 
-<br>
 <details><summary><b>✅ Step 2 solution</b></summary>
+<br>
 
 ```sh
 tr ";" "\t" < array_data-1.csv > array_data-1.tsv
@@ -1412,8 +1441,8 @@ the files need to be sorted by their 1st column (`ProbeID`).
 
 * Save the sorted output to files named `array_data-sorted-*.tsv`.
 
-<br>
 <details><summary><b>✅ Step 3 solution</b></summary>
+<br>
 
 ```sh
 sort -n array_data-1.tsv > array_data-sorted-1.tsv
@@ -1450,8 +1479,8 @@ Proceed as follows:
   these files. Their only purpose was to allow us to check that all files
   have their lines sorted in the same order.
 
-<br>
 <details><summary><b>✅ Step 4 solution</b></summary>
+<br>
 
 ```sh
 # Extract the first column of each file into a temporary file.
@@ -1504,8 +1533,8 @@ ProbeID     Sample1   Sample2   Sample3
 ...
 ```
 
-<br>
 <details><summary><b>✅ Step 5 solution</b></summary>
+<br>
 
 ```sh
 paste array_data-sorted-*.tsv | cut -f 1,2,4,6 > final.tsv
@@ -1520,7 +1549,7 @@ head final.tsv
 </details>
 <br>
 
-### Additional Task - Introduction to process substitution
+### 🔮 Additional task - Introduction to process substitution
 
 We will now try to re-write the entire process of converting, sorting and
 merging our 3 original data files (steps 2, 3 and 5 above) as a single command.
@@ -1563,8 +1592,9 @@ paste <( "sorted content of array_data-1.csv" | "convert ; to \t" ) \
 ```
 
 </details>
-<br>
+
 <details><summary><b>✅ Solution</b></summary>
+<br>
 
 Here is how we could do the whole processing of this exercise in a single
 command without creating any intermediate files.
@@ -1680,8 +1710,8 @@ Here is a reminder of some of the `grep` options:
 * **`-n`**: add the line number in front of printed output.
 * **`-v`**: inverted search - print lines that do _not_ match the pattern.
 
-<br>
 <details><summary><b>✅ Solution Part A</b></summary>
+<br>
 
 ```sh
 cd exercise_7/
@@ -1741,8 +1771,9 @@ Here are some commands and their options that are useful for this exercise:
 
 </details>
 <br>
-<details><summary><b>✅ Solution Part B</b></summary>
 
+<details><summary><b>✅ Solution Part B</b></summary>
+<br>
 There are multiple ways to perform this task - here are a few possibilities.
 
 > **✨ Note:** some pipelines below make use of the `grep` option **`-o`**,
@@ -1798,7 +1829,7 @@ grep -oP "(?<=OS=)[a-zA-Z]+ " sequences.fasta | sort | uniq -c | sort -nr | head
 </details>
 <br>
 
-### Additional Task - Automating tasks with `for` loops
+### 🔮 Additional task - Automating tasks with `for` loops
 
 This is not an easy one, but it's the last!
 
@@ -1850,8 +1881,8 @@ What you have left to do in the code above is to:
 * Replace `cp ...` with the proper command to copy all files for a given
   genus.
 
-<br>
 <details><summary><b>✅ Solution</b></summary>
+<br>
 
 ```sh
 # Enter the "exercise_7" directory and create a new "species_by_genus"

@@ -28,23 +28,16 @@ operating system and the **[Bash shell](https://www.gnu.org/software/bash)**.
 * [Exercise material (.zip)](https://github.com/sib-swiss/CAS-UNIL-intro-to-unix/raw/main/exercises.zip)
 * [Exam instructions](exam_instructions.md)
 
-<br>
-
 ### Environment setup
 
-The only technical requirement for the course is having a laptop with a
-reasonably recent version of either a `bash` shell (version >= `4.0`) or a
-`zsh` shell (the default shell on macOS since 2019) installed.
+The only technical requirement for the course is a laptop with a `bash` shell
+(version >= `4.0`) or a `zsh` shell (the default shell on macOS since 2019)
+installed.
 
-You can display your version of `bash` with the command:
-
-```sh
-bash --version
-```
-
-Please read the **[environment setup instructions](environment_setup.md)**
-for details. Make sure to set up your environment
-**before the start of the course**.
+* You can display your version of `bash` with the command: `bash --version`
+* Please read the [environment setup instructions](environment_setup.md)
+  for details. Make sure to set up your environment
+  **before the start of the course**.
 
 <br>
 <br>
@@ -77,16 +70,13 @@ More specifically, the course covers the following topics:
 ## Course structure 🌱
 
 Due to limited in-class time (0.5 days), this course requires participants
-to **self-study before and after the class**.
-
-<br>
+to self-study before and after the class.
 
 ### Pre-course tasks
 
-We kindly ask you to complete the following tasks
-**before the start of the course**:
+We kindly ask you to complete the following tasks before the course:
 
-* **[Set up your environment](environment_setup.md)** (~0.5h).
+* [Set up your environment](environment_setup.md) (~0.5h).
 * **Complete chapters 1 to 4** of the SIB
   [UNIX fundamentals e-learning module](https://www.sib.swiss/training/course/2012_UNIXF)
   (~3h):
@@ -96,8 +86,8 @@ We kindly ask you to complete the following tasks
   * [Chapter 4: UNIX shell - filesystem commands](https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/5/start.html)
 * **Complete exercises 1 and 2** of the
   [course exercises](exercise_instructions.md) (~1h).
-  * For exercise 1, please also complete the **Additional Task** sections.
-  * For exercise 2, the **Additional Task** sections are optional.
+  * For exercise 1, please also complete the **Additional task** sections.
+  * For exercise 2, the **Additional task** sections are optional.
 
 <br>
 
@@ -115,4 +105,4 @@ During the in-class part of the course, the following topics will be covered.
 Exercises to do on your own, after the class.
 
 * **Exercises 4**, **6**, and **7B** (~2h).
-* The **Additional Task** sections of the exercises are optional.
+* The **Additional task** sections of the exercises are optional.
