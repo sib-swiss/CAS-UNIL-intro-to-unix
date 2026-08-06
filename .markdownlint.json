@@ -1,0 +1,21 @@
+{
+  "MD033": {
+    "allowed_elements": [
+      "br",
+      "details",
+      "summary",
+      "b",
+      "p"
+    ]
+  },
+  "MD013": {
+    "code_block_line_length": 100
+  },
+  "MD028": false,
+  "MD049": {
+    "style": "underscore"
+  },
+  "MD050": {
+    "style": "asterisk"
+  }
+}
