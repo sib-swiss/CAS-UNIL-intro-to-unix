@@ -4,7 +4,7 @@ Welcome to the home page of the
 **Introduction to Linux / UNIX and the Bash shell** course of the
 **University of Lausanne CAS in Data Stewardship**.
 
-This one-day course provides an introduction to the open-source
+This course provides an introduction to the open-source
 **[Linux](https://en.wikipedia.org/wiki/Linux)** /
 **[UNIX](https://en.wikipedia.org/wiki/Unix)**
 operating system and the **[Bash shell](https://www.gnu.org/software/bash)**.
