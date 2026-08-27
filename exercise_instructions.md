@@ -85,10 +85,12 @@ Open a new terminal (shell) and perform the following tasks:
 
    **❓ Question:** what do the `-l`, `-h` and `-a` options do ?
 
-   > **🎯 Hint:** you can use `man ls` or `ls --help` to display the help for
-   > the `ls` command. To exit the help, simply type `q` on your keyboard.
+   > **🎯 Hint**
+   > You can use `man ls` or `ls --help` to display the help for the `ls`
+   > command. To exit the help, simply type `q` on your keyboard.
 
-   > **✨ Notes:**
+   > **✨ Notes**
+   >
    > * One-letter options can be grouped together, so `ls -lha` is the
    >   same as `ls -l -h -a`
    > * Some options have both a **short** and a **long form**. E.g. `ls -lah`
@@ -217,10 +219,11 @@ Open a new terminal (shell) and perform the following tasks:
    **relative path**. `exercise_2/` is located in the same parent directory
    as `exercise_1`, your current working directory.
 
-   > **🎯 Hint:** the relative path of the parent directory is **`..`**
+   > **🎯 Hint**
    >
-   > Multiple `..` can be combined to go up multiple levels. E.g. `cd ../..`
-   > will go up two levels in the directory tree.
+   > * The relative path of the parent directory is **`..`**
+   > * Multiple `..` can be combined to go up multiple levels. E.g. `cd ../..`
+   >   will go up two levels in the directory tree.
 
     <details><summary><b>✅ Solution</b></summary>
     <br>
@@ -286,7 +289,7 @@ useful options. Note the the available options depend on the version of
 
 <br>
 
-> **✨ Notes:**
+> **✨ Notes**
 >
 > * On some Linux systems, an `ll` alias may already exist.
 > * To list your currently defined aliases, you can type `alias` to list
@@ -361,9 +364,11 @@ following commands - look at how file size is indicated:
 
 <br>
 
-> **✨ Note:** in everyday language, the term **kilobyte** (abbreviated `kB`)
-> is used for talking interchangeably about either **1000 bytes** or
-> **1024 bytes**, because they represent almost the same quantity of bytes.
+> **✨ Note**
+>
+> In everyday language, the term **kilobyte** (abbreviated `kB`) is used for
+> talking interchangeably about either **1000 bytes** or **1024 bytes**,
+> because they represent almost the same quantity of bytes.
 >
 > If we really wanted to be precise:
 >
@@ -385,7 +390,7 @@ following commands - look at how file size is indicated:
 
 <br>
 
-> **✨ Note:**
+> **✨ Notes**
 >
 > * The correct technical term for the expansion of wildcard characters by
 >   the shell is
@@ -467,11 +472,13 @@ Using `ls` and wildcard characters, perform the following tasks:
     # Rhinoceros_sondaicus      (Javan Rhinoceros).
     ```
 
-    > **✨ Note:** since both _Dicerorhinus_ and _Diceros_ start with the
-    > string `Dicero`, we can match the pattern `Dicero*` to get both genera
-    > at the same time.
+    > **✨ Note**
+    >
+    > Since both _Dicerorhinus_ and _Diceros_ start with the string `Dicero`,
+    > we can match the pattern `Dicero*` to get both genera at the same time.
     >
     > There are two other Rhino species 🦏:
+    >
     > * The White Rhino (_Ceratotherium simum_) is
     >   [listed as "Near Threatened" by the IUCN](https://www.iucnredlist.org/species/4185/45813880).
     >   This species has two subspecies: the Northern and Southern White Rhino.
@@ -501,7 +508,9 @@ Using `ls` and wildcard characters, perform the following tasks:
     # Nomascus_siki      (Southern white-cheeked gibbon).
     ```
 
-    > **✨ Note:** in this specific case, using `ls -l Nomascus_*[ri]` or
+    > **✨ Note**
+    >
+    > In this specific case, using `ls -l Nomascus_*[ri]` or
     > `ls -l Nomascus*[ri]` gives the same result, but in principle the former
     > is safer to use because it will only match genus names corresponding to
     > exactly `Nomascus`, while the latter could match any genus name starting
@@ -511,7 +520,7 @@ Using `ls` and wildcard characters, perform the following tasks:
    <br>
 
 4. **List the files of species that meet _both_ of the following conditions**:
-   * The genus name contains the pattern "`l` + a single letter + a letter
+   * The genus name contains the pattern "`l` + a single character + a letter
      between `a` and `h`", e.g. `lia` or `lug`.
    * The species name starts with a `g`.
 
@@ -526,11 +535,20 @@ Using `ls` and wildcard characters, perform the following tasks:
    <br>
 
     ```sh
-    ls -l *l?[a-h]*_g*
+     ls -l *l?[a-h]*_g*
 
-    # Eubalaena_glacialis    (North Atlantic right whale).
-    # Gorilla_gorilla        (Western gorilla).
-    # Plecturocebus_grovesi  (Alta Floresta titi monkey - a New World monkey).
+     # There are 3 matches:
+     # Eubalaena_glacialis    (North Atlantic right whale).
+     # Gorilla_gorilla        (Western gorilla).
+     # Plecturocebus_grovesi  (Alta Floresta titi monkey - a New World monkey).
+    ```
+
+   Note that if we wanted to also match species with the pattern `l?[a-h]` at
+   the start of their genus name, we would need:
+
+    ```sh
+     # Returns the same 3 matches as above.
+     ls -l *[Ll]?[a-h]*_g*
     ```
 
    </details>
@@ -551,9 +569,10 @@ For instance, _Pteralopex pulchra_, the
 would be a match, because its genus name _Pteralopex_ contains the pattern
 `opex` and its species name _pulchra_ ends with the pattern `ra`.
 
-> **🎯 Hint:** this pattern cannot be matched in a single expression using
-> only regular file globbing (i.e. filename expansion). You will need to
-> either:
+> **🎯 Hint**
+>
+> This pattern cannot be matched in a single expression using only regular file
+> globbing (i.e. filename expansion). You will need to either:
 >
 > * Use 2 expressions with regular globbing.
 > * Use [brace expansion](https://www.gnu.org/software/bash/manual/bash.html#Brace-Expansion).
@@ -576,8 +595,10 @@ ls -l *[ao]??x_*@(ra|i)         # Solution using pattern matching.
 # Sorex_sclateri        (Sclater's shrew).
 ```
 
-> **✨ Note:** to avoid duplicating the `*[ao]??x_*` part, we can use
-> either **pattern matching** or **brace expansion**:
+> **✨ Note**
+>
+> To avoid duplicating the `*[ao]??x_*` part, we can use either
+> **pattern matching** or **brace expansion**:
 >
 > **[Pattern matching](https://www.gnu.org/software/bash/manual/bash.html#Pattern-Matching)**:
 > here `@(ra|i)` matches either the pattern `ra` or `i`. Note that this
@@ -640,6 +661,7 @@ becomes useful.
 Enter the directory `exercise_3/` and perform the following tasks:
 
 1. **Create directories** with the **`mkdir`** command:
+
    * In the directory `exercise_3/`, create 2 new directories:
      `species_by_genus` and `species_by_common_name`.
    * In `species_by_genus/`, create 2 new subdirectories:
@@ -648,16 +670,20 @@ Enter the directory `exercise_3/` and perform the following tasks:
      `Crocidura` ([a genus of shrews](https://en.wikipedia.org/wiki/Crocidura)).
    * In `species_by_common_name/`, create 2 new subdirectories
      named `B` and `R`.
+  
+   <br>
 
-   > **🔥 Tip:** to avoid having to rewrite a command, remember that you can
-   > use the **up arrow** of your keyboard to go back in your terminal history.
+   > **🔥 Tip**
+   >
+   > To avoid having to rewrite a command, remember that you can use the
+   > **up arrow** of your keyboard to go back in your terminal history.
    > This allows you to re-use a command that you wrote earlier, while making
    > changes to it if needed.
 
    <details><summary><b>✅ Solution</b></summary>
    <br>
 
-    * **Create directories `species_by_genus` and `species_by_common_name`**.
+   **Create directories `species_by_genus` and `species_by_common_name`**.
 
      ```sh
      cd exercise_3
@@ -673,7 +699,7 @@ Enter the directory `exercise_3/` and perform the following tasks:
      mkdir species_by_{genus,common_name}
      ```
 
-    * **Create subdirectories `Dendrolagus` and `Crocidura`**.
+   **Create subdirectories `Dendrolagus` and `Crocidura`**.
 
      ```sh
      # Option 1: create the subdirectories from the root of exercise_3.
@@ -688,7 +714,7 @@ Enter the directory `exercise_3/` and perform the following tasks:
      mkdir species_by_genus/{Dendrolagus,Crocidura}
      ```
 
-    * **Create subdirectories `B` and `R`**.
+   **Create subdirectories `B` and `R`**.
 
      ```sh
      # Option 1: specify the full (relative) path of the subdirectories to create.
@@ -703,22 +729,27 @@ Enter the directory `exercise_3/` and perform the following tasks:
      mkdir species_by_common_name/{B,R}
      ```
 
-    **✨ Note:** using the **`-p` option of `mkdir`**, it is possible to create
-    multiple levels of directories in a single command. For example, we could
-    create all the directories for this exercise in a single command:
+   > **✨ Note**
+   >
+   > Using the **`-p` option of `mkdir`**, it is possible to create multiple
+   > levels of directories in a single command. For example, we could create
+   > all the directories for this exercise in a single command:
+   >
+   > ```sh
+   > mkdir -p species_by_{genus/{Dendrolagus,Crocidura},common_name/{B,R}}
+   > ```
 
-      ```sh
-      mkdir -p species_by_{genus/{Dendrolagus,Crocidura},common_name/{B,R}}
-      ```
-
-    **🔥 Tip:** to preview the output of a brace expansion (or filename
-    expansion), you can run the command prefixed with **`echo`**: this prints
-    the command that would be executed to the terminal without running the
-    command.
-
-      ```sh
-      echo mkdir -p species_by_{genus/{Dendrolagus,Crocidura},common_name/{B,R}}
-      ```
+   > **🔥 Tip**
+   >
+   > To preview the output of a brace expansion (or filename expansion), you
+   > can run the command prefixed with **`echo`**
+   >
+   > This prints the command that would be executed to the terminal (with all
+   > expansions performed) without running it.
+   >
+   > ```sh
+   > echo mkdir -p species_by_{genus/{Dendrolagus,Crocidura},common_name/{B,R}}
+   > ```
 
    </details>
    <br>
@@ -732,6 +763,7 @@ Enter the directory `exercise_3/` and perform the following tasks:
      [Red Wolf](https://en.wikipedia.org/wiki/Red_wolf) (_Canis rufus_) to the
      directory `species_by_common_name`.
 
+   <br>
    <details><summary><b>✅ Solution</b></summary>
    <br>
 
@@ -755,6 +787,7 @@ Enter the directory `exercise_3/` and perform the following tasks:
    * Rename the `Canis_rufus` file you just moved into the subdirectory `R` to
      the common name of the species: `Red_wolf`.
 
+   <br>
    <details><summary><b>✅ Solution</b></summary>
    <br>
 
@@ -818,8 +851,10 @@ Enter the directory `exercise_3/` and perform the following tasks:
     rmdir Tree-kangaroos
     ```
 
-    > **🦘 Note:** the fastest way to delete the directory and all of its
-    > content is to use the command: `rm -rf Tree-kangaroos`.
+    > **🦘 Note**
+    >
+    > The fastest way to delete the directory and all of its content is to use
+    > the command: `rm -rf Tree-kangaroos`.
     >
     > **⚠️ Warning:** this recursively deletes the directory, and therefore
     > one has to be **very careful** to delete the correct directory, as you
@@ -851,12 +886,9 @@ Enter the directory `exercise_3/` and perform the following tasks:
    it creates the directories from `A` to `Z`.
 
    > **✨ Note:** in this specific case, a **for loop** is not even necessary,
-   > as we can also simply use
+   > as we can simply use
    > **[brace expansion](https://www.gnu.org/software/bash/manual/bash.html#Brace-Expansion)**:
-   >
-   > ```sh
-   > mkdir {A..Z}
-   > ```
+   > `mkdir {A..Z}`
 
    <br>
 
@@ -878,8 +910,6 @@ Enter the directory `exercise_3/` and perform the following tasks:
    **error messages**, because the genera present in `RedList_mammals` do
    not cover all letters of the alphabet. However, this is not a problem here
    because those errors do not prevent the `for` loop from completing.
-
-   <br>
 
 <details><summary><b>✅ Solution</b></summary>
 <br>
@@ -918,7 +948,8 @@ Enter the `exercise_4` directory and perform the following tasks using the
 1. **Find all files with a `.png` extension** located anywhere in `exercise_4/`.
    Make sure to list _only_ files, and not directories.
 
-   > **🎯 Hints:**
+   > **🎯 Hints**
+   >
    > * Use **`-type f`** to restrict the search to files (excludes directories).
    > * You should find a total of 6 `.png` files.
 
@@ -953,7 +984,8 @@ Enter the `exercise_4` directory and perform the following tasks using the
 2. **Find files with either a `.jpeg` or `.png` extension**. As before,
    directories should be excluded from the search results.
 
-   > **🎯 Hints:**
+   > **🎯 Hints**
+   >
    > * Use the **`-or`** operator to combine multiple search conditions.
    > * You should find a total of 15 files.
 
@@ -966,7 +998,7 @@ Enter the `exercise_4` directory and perform the following tasks using the
      # -> There are 6 ".png" files, located in ./images/img.png/
     ```
 
-    > **✨ Notes:**
+    > **✨ Notes**
     >
     > * The `-or` operator has a **lower precedence** than the implicit `-and`
     >   that separates search criteria. As a result, `-type f` applies only to
@@ -1086,11 +1118,9 @@ find . -type f -name "*.jpeg" -size +15k -exec ls -lh "{}" \;
 
 ## Exercise 5 - Display file content [~10 min]
 
-**🚩 Objective:**
-
-* Get familiar with shell commands that display text file content: `head`,
-  `tail`, `cat` and `less`.
-* Get familiar with the basic usage of `tar`.
+**🚩 Objectives:** get familiar with shell commands that display text file
+content: `head`, `tail`, `cat` and `less`. Get familiar with the basic usage
+of `tar`.
 
 <br>
 
@@ -1181,7 +1211,9 @@ following tasks on the `protein_sequences.fasta` file:
 
 4. **Display, navigate and search** the file with **`less`**:
    * Open the file using `less`.
-   * Add line numbers to the display using the **`-N` option**.
+   * Add line numbers to the display using the **`-N` option**: you can either
+     type `-N` + Enter when the file is open, or use `less -N <file name>` when
+     opening the file.
    * Navigate the file using the space bar and arrows.
    * Search for the pattern `isoform` using the command `/<search term>`, then
      navigate through the matches with the keys `n` and `N`.
@@ -1194,7 +1226,7 @@ following tasks on the `protein_sequences.fasta` file:
     ```sh
     less protein_sequences.fasta
     less -N protein_sequences.fasta   # Line numbers can also be added/removed
-                                      # after the file has been opened, by typing "-N".
+                                      # after the file has been opened, by typing '-N'.
     ```
 
    </details>
@@ -1363,8 +1395,10 @@ head array_data-*
 less array_data-1.csv       # Reminder: to exit less, press "q".
 ```
 
-> **🔥 Tip:** to display the content of the file in a "nicer", column-aligned
-> format, the **`column`** command can be used:
+> **🔥 Tip**
+>
+> To display the content of the file in a "nicer", column-aligned format, the
+> **`column`** command can be used:
 >
 > ```sh
 > column -s';' -t array_data-1.csv | less -#2 -N -S
@@ -1390,7 +1424,7 @@ character. We would like to change this separator to a Tab **`\t`**.
 * Save the converted content into a new file with a `.tsv` extension. E.g. the
   converted version of `array_data-1.csv` should be named `array_data-1.tsv`.
 
-> **🎯 Hints:**
+> **🎯 Hints**
 >
 > * To convert (translate) one character to another in a file, the `tr`
 >   command looks like: `tr "CHARACTER TO REPLACE" "NEW CHARACTER"`.
@@ -1398,7 +1432,7 @@ character. We would like to change this separator to a Tab **`\t`**.
 >   i.e. it does not accept a file name as argument. Therefore, you need to
 >   redirect the content of a file to standard input with `< FILE_NAME`.
 
-> **🐧 Fun fact:**
+> **🐧 Fun fact**
 >
 > `tr` is one of the (few) commands that **does not accept a file as input** -
 > it only accepts input from _stdin_. This is why we must use `tr < file` or
@@ -1541,9 +1575,11 @@ paste array_data-sorted-*.tsv | cut -f 1,2,4,6 > final.tsv
 head final.tsv
 ```
 
-> **✨ Note:** to learn how to do the entire processing we did in this exercise
-> **in a single command**, look at the Additional Task section below. It
-> also shows how the processing can be done using the `join` command, but it's
+> **✨ Note**
+>
+> To learn how to do the entire processing we did in this exercise
+> **in a single command**, look at the Additional Task section below. It also
+> shows how the processing can be done using the `join` command, but it's
 > actually more complicated in this case.
 
 </details>
@@ -1562,9 +1598,10 @@ For this you will need to use the following shell functionalities:
   syntax `<( command )`, to treat the output of a command (or of a series of
   commands) as a virtual file from which data can be read.
 
-> **🎯 Hint:** this task is a bit more complicated. To get you started, here
-> is an example to give you some inspiration. You can run the command below in
-> your shell:
+> **🎯 Hint**
+>
+> This task is a bit more complicated. To get you started, here is an example
+> to give you some inspiration. You can run the command below in your shell:
 >
 > ```sh
 >  # Sort and merge the 2nd column (gene expression) of 2 of our input files:
@@ -1573,10 +1610,12 @@ For this you will need to use the following shell functionalities:
 >        head
 > ```
 
-> **✨ Note:** `-d` is the `cut` option to specify a custom field delimiter
-> (the default is a Tab character). In the GNU version of `cut`, the long form
-> of this option is `--delimiter`. The long form does not exist in the BSD
-> version of the `cut` command (such as found in macOS).
+> **✨ Note**
+>
+> `-d` is the `cut` option to specify a custom field delimiter (the default is
+> a Tab character). In the GNU version of `cut`, the long form of this option
+> is `--delimiter`. The long form does not exist in the BSD version of the
+> `cut` command (such as found in macOS).
 
 <br>
 <details><summary><b>🎯 Additional Hint</b></summary>
@@ -1610,7 +1649,8 @@ diff -s final*.tsv       # Same as above, using filename expansion.
 diff -s final{,_2}.tsv   # Same as above, using brace expansion.
 ```
 
-> **🌟 Bonus:**
+> **🌟 Bonus**
+>
 > An alternative is to use the **`join`** command. Unfortunately, the `join`
 > command only allows joining 2 files at a time, so in this case the solution
 > ends up being more complicated (`join` would however be much better in cases
@@ -1629,8 +1669,10 @@ diff -s final{,_2}.tsv   # Same as above, using brace expansion.
 >  diff -s final{,_3}.tsv
 > ```
 
-> **✨ Note:** in the GNU version of `join`, the option **`--check-order`** can
-> be added to make the command fail if the input files are not properly sorted.
+> **✨ Note**
+>
+> In the GNU version of `join`, the option **`--check-order`** can be added to
+> make the command fail if the input files are not properly sorted.
 > This option does not exist in the BSD version of `join` found on macOS.
 
 </details>
@@ -1749,7 +1791,7 @@ Here is a suggested way to perform this task:
    instance of each genus name.
 4. Sort the genera by frequency and keep only the 10 most frequent.
 
-> **🎯 Hints:**
+> **🎯 Hints**
 >
 > * The steps above are best done as part of a pipeline: use the
 >   **`|` (pipe) operator** to pipe the output of one command into the next.
@@ -1776,9 +1818,11 @@ Here are some commands and their options that are useful for this exercise:
 <br>
 There are multiple ways to perform this task - here are a few possibilities.
 
-> **✨ Note:** some pipelines below make use of the `grep` option **`-o`**,
-> which instructs `grep` to only output the actual matching pattern instead of
-> the entire line on which the match is found.
+> **✨ Note**
+>
+> Some pipelines below make use of the `grep` option **`-o`**, which instructs
+> `grep` to only output the actual matching pattern instead of the entire line
+> on which the match is found.
 
 ```sh
 grep "^>" sequences.fasta | cut -f2 -d "=" | cut -f1 -d " " | \
@@ -1817,7 +1861,7 @@ Here is another solution that makes use of a more complicated
 grep -oP "(?<=OS=)[a-zA-Z]+ " sequences.fasta | sort | uniq -c | sort -nr | head
 ```
 
-> **✨ Notes:**
+> **✨ Notes**
 >
 > * The `-P` option is only available in the GNU version of `grep`. It does
 >   not exist in the BSD version found on macOS, where the
